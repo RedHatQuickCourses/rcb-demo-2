@@ -1,0 +1,4 @@
+* xref:ansible-architecture-and-concepts.adoc[]
+** xref:ansible-architecture.adoc[]
+** xref:inventory-playbooks-and-modules.adoc[]
+** xref:fact-gathering-and-variables.adoc[]

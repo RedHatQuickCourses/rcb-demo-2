@@ -1,0 +1,4 @@
+* xref:managing-tasks-with-roles.adoc[]
+** xref:understanding-roles.adoc[]
+** xref:creating-and-structuring-roles.adoc[]
+** xref:role-dependencies-and-including-roles.adoc[]

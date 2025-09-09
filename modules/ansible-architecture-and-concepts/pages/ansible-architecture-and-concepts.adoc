@@ -1,0 +1,7 @@
+#  Ansible Architecture and Concepts
+
+- **Ansible Architecture**: Ansible follows a client-server architecture where the Ansible control node (client) manages the nodes (servers). The control node pushes small programs called Ansible modules to the remote nodes, which execute and return the results back to the control node.
+
+  - **Inventory, Playbooks, and Modules**: Inventory is a simple JSON, YAML, or INI format file that lists the servers managed by Ansible. Playbooks are Ansible's configuration, deployment, and orchestration language, written in YAML. Modules are the building blocks of Ansible, performing specific tasks on remote nodes.
+
+  - **Fact Gathering and Variables**: Ansible can gather 'facts' about remote nodes, such as operating system, network interfaces, and disk usage. These facts can be used in playbooks to create dynamic configurations, and variables allow for customization and reusability in playbooks.

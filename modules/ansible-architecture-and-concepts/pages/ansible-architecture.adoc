@@ -1,0 +1,36 @@
+#  Ansible Architecture
+
+```
+== Ansible Architecture
+
+Ansible, an open-source automation tool, follows a simple and agentless architecture. This design makes it easy to deploy, understand, and scale. Here's a detailed look into its architecture and key concepts:
+
+=== Components of Ansible Architecture
+
+Ansible architecture comprises the following main components:
+
+1. **Ansible Control Node**: This is the system from which you manage and automate other systems. It doesn't require any special hardware and can be any machine that has network access to the managed nodes.
+
+2. **Managed Nodes**: These are the servers or devices managed by Ansible. They can be physical machines, virtual machines, cloud instances, containers, network devices, etc.
+
+3. **Ansible Tower/AWX**: While not part of the core Ansible package, Ansible Tower (now known as AWX) is a web-based solution that enhances Ansible with advanced features like REST API, UI, and RBAC.
+
+4. **Inventory**: The inventory is a file (usually written in YAML or INI format) that contains a list of hosts (managed nodes) and their attributes. It helps Ansible identify which systems to manage.
+
+5. **Playbooks**: Playbooks are Ansible's configuration, deployment, and orchestration language. They are written in YAML and describe a policy you want to enforce on your infrastructure.
+
+6. **Modules**: Modules are reusable, standalone scripts that Ansible executes on managed nodes. They perform specific tasks such as managing services, files, or packages.
+
+7. **Facts**: Facts are pieces of information gathered by Ansible about remote nodes during the connection phase. They provide insights into the managed nodes' current state, enabling dynamic inventory and conditional task execution.
+
+=== How Ansible Works
+
+1. **Connection**: Ansible connects to the managed nodes using SSH for Linux-based systems and WinRM for Windows.
+
+2. **Execution**: Once connected, Ansible executes modules on managed nodes to perform tasks.
+
+3. **Fact Gathering**: Ansible gathers facts about managed nodes, which can be used in playbooks for dynamic inventory and conditional task execution.
+
+4. **Playbooks Execution**: Playbooks define a series of tasks to be executed on managed nodes. They can also include variables, templates, and role dependencies.
+
+5. **Idempotency**: Ansible playbooks are idempotent, meaning they won't change

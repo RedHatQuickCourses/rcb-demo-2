@@ -1,0 +1,67 @@
+#  Writing and Executing Basic Playbooks
+
+```
+== Writing and Executing Basic Playbooks
+
+Ansible playbooks are written in YAML, a human-readable data serialization format. They define the desired state of a system and instruct Ansible on how to achieve that state. This section will guide you through writing and executing basic playbooks.
+
+### Playbook Structure and Syntax
+
+A playbook is a file containing one or more plays. A play, in turn, consists of a set of tasks. Here's a basic structure of a playbook:
+
+```yaml
+---
+- hosts: web_servers
+  become: yes
+  tasks:
+    - name: Ensure Apache is installed
+      apt:
+        name: apache2
+        state: present
+
+    - name: Ensure Apache is running
+      service:
+        name: apache2
+        state: started
+```
+
+- **hosts**: A list of groups of hosts on which the play should be executed.
+- **become**: Whether to become another user (usually 'root') for the tasks.
+- **tasks**: A list of tasks to be executed on each host in the host list.
+
+Each task in the tasks list is defined as a hash with at least a 'name' field. The 'name' field is used to identify the task and can be referenced in other tasks or playbooks.
+
+### Basic Playbook Examples
+
+Let's consider a simple playbook that ensures Apache is installed and running on a group of hosts called 'web_servers'.
+
+```yaml
+---
+- hosts: web_servers
+  become: yes
+  tasks:
+    - name: Ensure Apache is installed
+      apt:
+        name: apache2
+        state: present
+
+    - name: Ensure Apache is running
+      service:
+        name: apache2
+        state: started
+```
+
+This playbook does the following:
+
+1. Targets the group of hosts named 'web_servers'.
+2. Becomes the superuser ('root') to perform tasks requiring elevated privileges.
+3. Contains two tasks:
+   - The first task uses the 'apt' module to ensure that the 'apache2' package is installed.
+   - The second task uses the 'service' module to ensure that the 'apache2' service is running.
+
+### Executing Playbooks
+
+To execute a playbook, use the `ansible-playbook` command followed by the path to the playbook file:
+
+```bash
+ansible-playbook /path/to/your

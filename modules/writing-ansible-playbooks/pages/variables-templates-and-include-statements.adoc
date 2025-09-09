@@ -1,0 +1,60 @@
+#  Variables, Templates, and Include Statements
+
+```
+== Variables, Templates, and Include Statements
+
+Ansible playbooks often require dynamic configuration, which can be achieved using variables, templates, and include statements. These features allow for reusability, modularity, and flexibility in your playbooks.
+
+=== Variables
+
+Variables in Ansible are used to store values that can be reused throughout a playbook. They help in creating more dynamic and adaptable configurations. Variables can be defined in various ways:
+
+- **Playbook Variables**: Defined within a playbook using the `vars` keyword.
+- **Role Variables**: Stored in a `vars` directory inside a role.
+- **Group Variables**: Defined at the group level in the inventory file.
+- **Inventory Variables**: Passed directly in the inventory file.
+- **Facts**: Information gathered by Ansible about remote systems.
+
+Example of defining a variable in a playbook:
+
+```yaml
+---
+- name: Example playbook
+  hosts: all
+  vars:
+    app_version: "1.0.0"
+  tasks:
+    - debug:
+        var: app_version
+```
+
+=== Templates
+
+Templates in Ansible are Jinja2-based files that allow you to create dynamic configurations. They enable you to generate files with variable content, making it easier to manage configurations across multiple systems.
+
+To use templates, you need to place your template files in the `templates` directory of a role or in a common location accessible to your playbook. Then, reference the template in your tasks using the `template` module.
+
+Example of using a template:
+
+```yaml
+---
+- name: Example playbook
+  hosts: all
+  tasks:
+    - name: Copying an HTTP configuration file
+      template:
+        src: files/httpd.conf.j2
+        dest: /etc/httpd/conf/httpd.conf
+```
+
+In this example, `httpd.conf.j2` is the template file containing Jinja2 syntax to insert variable data.
+
+=== Include Statements
+
+Include statements in Ansible allow you to modularize your playbooks by breaking them into smaller, reusable files. This promotes code reusability and maintainability. You can include tasks, roles, or even entire playbooks using the `include_tasks`, `include_role`, and `include` directives.
+
+Example of including tasks:
+
+```yaml
+---
+- name:

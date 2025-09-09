@@ -1,0 +1,37 @@
+#  Implementing Roles and Control Flow
+
+== Managing Tasks with Roles
+
+Ansible Roles are a way to organize playbooks and ensure they are reusable, shareable, and maintainable. They encapsulate all the necessary components for managing a specific task or application, such as tasks, handlers, files, templates, and default variables. This modular approach simplifies playbook creation and maintenance.
+
+### Understanding Roles
+
+Roles in Ansible are self-contained directories that group related tasks, handlers, files, templates, and default variables. They promote the DRY (Don't Repeat Yourself) principle by allowing you to reuse code across playbooks. A role directory should contain the following subdirectories:
+
+- `tasks`: Contains the main tasks to be executed.
+- `handlers`: Contains handlers that are triggered by notifiers in tasks.
+- `files`: Contains files to be copied to the remote systems.
+- `templates`: Contains templates to be rendered on the remote systems.
+- `defaults`: Contains default variables for the role.
+- `vars`: Contains variable files that override default variables.
+- `meta`: Contains additional Ansible control options for the role.
+
+### Creating and Structuring Roles
+
+To create a role, follow these steps:
+
+1. Create a new directory for your role, e.g., `my_role`.
+2. Inside the role directory, create the necessary subdirectories mentioned above.
+3. Write tasks in the `tasks/main.yml` file.
+4. Define handlers in the `handlers/main.yml` file if needed.
+5. Place any required files in the `files` directory.
+6. Create templates in the `templates` directory.
+7. Set default variables in the `defaults/main.yml` file.
+8. Override default variables in the `vars` directory.
+9. Add any role-specific metadata in the `meta/main.yml` file.
+
+### Role Dependencies and Including Roles
+
+Roles can depend on other roles, ensuring that prerequisite roles are executed before the dependent roles. To include roles in a playbook, use the `roles` keyword followed by a list of role names. You can also use the `include_role` Ansible task to include roles within a playbook.
+
+To define role dependencies, use the `requirements` file in the role directory. The `requirements` file should contain a list of roles that this role depends on, one role

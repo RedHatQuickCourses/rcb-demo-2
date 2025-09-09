@@ -1,0 +1,76 @@
+#  Basic Playbook Examples
+
+```
+== Basic Playbook Examples
+
+Ansible playbooks are written in the YAML format and serve as the instruction set for Ansible to configure systems. They define the desired state of the managed nodes and instruct Ansible on how to achieve this state. This section will provide basic playbook examples to illustrate their structure and syntax.
+
+### Playbook Structure and Syntax
+
+A playbook consists of plays, which are lists of tasks that are executed on a set of hosts. Here's a basic playbook structure:
+
+```yaml
+---
+- name: Playbook Name
+  hosts: Target Hosts
+  become: true
+  tasks:
+    - name: Task Description
+      ansible.builtin.command: Command to Execute
+```
+
+- `name`: A descriptive title for the playbook.
+- `hosts`: The group of hosts targeted by the play.
+- `become`: Whether to become a different user (usually 'root') for the tasks.
+- `tasks`: A list of tasks to be executed on the target hosts.
+
+### Basic Playbook Examples
+
+#### Example 1: Installing Apache on Target Hosts
+
+This playbook installs the Apache web server on a group of hosts called 'webservers'.
+
+```yaml
+---
+- name: Install and start Apache
+  hosts: webservers
+  become: true
+  tasks:
+    - name: Ensure Apache is installed
+      ansible.builtin.apt:
+        name: apache2
+        state: present
+
+    - name: Ensure Apache is running
+      ansible.builtin.service:
+        name: apache2
+        state: started
+```
+
+#### Example 2: Managing Files
+
+This playbook copies a local file to remote servers and ensures its presence.
+
+```yaml
+---
+- name: Copy and manage a file
+  hosts: all
+  become: true
+  tasks:
+    - name: Copy file from local to remote
+      ansible.builtin.copy:
+        src: /etc/ansible/myfile.conf
+        dest: /etc/apache2/conf-available/myfile.conf
+
+    - name: Ensure file permissions are set
+      ansible.builtin.file:
+        path: /etc/apache2/conf-available/myfile.conf
+        mode: '0644'
+```
+
+### Hands-on Activity: Writing Basic Playbooks
+
+**Objective:** Create and execute basic Ansible playbooks to manage services and files.
+
+**Steps:**
+

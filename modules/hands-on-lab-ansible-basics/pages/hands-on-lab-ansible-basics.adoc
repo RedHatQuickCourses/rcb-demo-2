@@ -1,0 +1,11 @@
+#  Hands-on Lab: Ansible Basics
+
+- **Hands-on Lab: Ansible Basics**
+
+  - This lab provides a practical introduction to Ansible, focusing on setting up a simple Ansible environment.
+  - Participants will learn to write and execute basic playbooks, gaining hands-on experience with Ansible's syntax and structure.
+  - The lab covers implementing roles, enabling the organization and reusability of automation tasks.
+  - Control flow in playbooks is also introduced, allowing for more sophisticated automation workflows.
+  - This lab is designed to reinforce the concepts learned in the 'Writing Ansible Playbooks' and 'Managing Tasks with Roles' sections.
+  - It serves as a stepping stone for applying Ansible in real-world scenarios, bridging theoretical knowledge with practical skills.
+  - By the end of this lab, learners should be comfortable with creating, executing, and managing Ansible playbooks and roles.

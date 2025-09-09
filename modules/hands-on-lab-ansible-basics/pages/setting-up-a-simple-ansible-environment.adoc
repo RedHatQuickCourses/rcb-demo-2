@@ -1,0 +1,71 @@
+#  Setting up a Simple Ansible Environment
+
+```
+== Hands-on Lab: Setting up a Simple Ansible Environment
+
+In this hands-on lab, you will learn how to set up a simple Ansible environment. This includes installing Ansible on your local machine or a virtual machine, configuring the inventory, and ensuring that your Ansible environment is ready for managing hosts.
+
+### Prerequisites
+
+Before starting this lab, ensure you have the following:
+
+1. A system (local or virtual) with a supported operating system (like Ubuntu, CentOS, or macOS).
+2. Basic command-line proficiency using tools like Terminal (macOS/Linux) or Command Prompt (Windows).
+3. An understanding of SSH and basic network concepts.
+
+### Step 1: Install Ansible
+
+Begin by installing Ansible on your system. The installation process varies slightly depending on your operating system. Here are the steps for some common systems:
+
+**For Ubuntu/Debian:**
+
+1. Update the package list:
+   ```bash
+   sudo apt update
+   ```
+2. Install Ansible:
+   ```bash
+   sudo apt install ansible
+   ```
+
+**For CentOS/RHEL:**
+
+1. Enable the EPEL repository:
+   ```bash
+   sudo yum install epel-release
+   ```
+2. Install Ansible:
+   ```bash
+   sudo yum install ansible
+   ```
+
+**For macOS (using Homebrew):**
+
+1. Install Ansible:
+   ```bash
+   brew install ansible
+   ```
+
+Verify the installation by checking the Ansible version:
+
+```bash
+ansible --version
+```
+
+You should see the installed Ansible version printed in the terminal.
+
+### Step 2: Configure Inventory
+
+Ansible uses an inventory file to define the hosts it manages. Create an inventory file named `inventory.ini` in a new directory, e.g., `ansible-env`. Here's a basic example of what this file might look like:
+
+```ini
+[webservers]
+web1.example.com ansible_host=192.168.1.100
+web2.example.com ansible_host=192.168.1.101
+
+[databases]
+db1.example.com ansible_host=192.168.1.102
+
+[all:vars]
+ansible_user=your_username
+ansible_ssh_private_key_file=~/.ssh/

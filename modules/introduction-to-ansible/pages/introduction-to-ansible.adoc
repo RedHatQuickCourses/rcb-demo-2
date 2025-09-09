@@ -1,0 +1,6 @@
+#  Introduction to Ansible
+
+
+- **Overview of Ansible**: Ansible is an open-source automation tool, aimed at simplifying the management and configuration of systems. It uses a simple language (YAML, in the form of Playbooks) to describe automation jobs in a way that's both machine-friendly and human-readable.
+
+- **Installing Ansible**: To get started with Ansible, you need to install it on your control node. This involves setting up Python, ideally version 3, and then using pip or another package manager to install Ansible. Ensure that the system's user has sudo privileges for smooth operation.

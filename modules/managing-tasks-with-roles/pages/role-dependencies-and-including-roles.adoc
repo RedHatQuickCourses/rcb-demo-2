@@ -1,0 +1,57 @@
+#  Role Dependencies and Including Roles
+
+## Role Dependencies and Including Roles
+
+In Ansible, roles are a way to partition playbook content into manageable, reusable pieces. They promote the DRY (Don't Repeat Yourself) principle by allowing you to define a role once and then include it in multiple playbooks. This section will cover role dependencies and including roles.
+
+### Understanding Role Dependencies
+
+Role dependencies allow you to specify that one role should be executed before another. This is particularly useful when roles depend on specific tasks or services provided by other roles.
+
+Ansible uses the `meta/main.yml` file within a role to define dependencies. The `dependencies` key is used to list the names of the roles that the current role depends on.
+
+Here's an example of how to define role dependencies:
+
+```yaml
+---
+- name: Setup Apache
+  hosts: all
+  roles:
+    - common
+    - apache_setup
+
+- name: Install Database
+  hosts: db_servers
+  roles:
+    - common
+    - database_setup
+```
+
+In this example, `apache_setup` role depends on the `common` role, and `database_setup` role depends on both the `common` and `apache_setup` roles.
+
+### Including Roles
+
+To include a role in a playbook, you use the `roles` key under the play definition. You can either list the role names directly or reference them using a variable.
+
+Here's an example of including roles in a playbook:
+
+```yaml
+---
+- name: Playbook demonstrating role inclusion
+  hosts: all
+  vars:
+    primary_role: common
+    secondary_role: apache_setup
+
+  roles:
+    - {{ primary_role }}
+    - {{ secondary_role }}
+```
+
+In this example, the `common` and `apache_setup` roles are included in the playbook.
+
+### Hands-on Activity: Role Dependencies and Including Roles
+
+1. **Create Roles**: Create two roles, `common` and `apache_setup`. The `common` role should contain tasks for setting up common configurations, while the `apache_setup` role should contain tasks for setting up an Apache web server. Make sure to define role dependencies in the `meta/main.yml` file of each role.
+
+2. **Playbook with Role Inclusion**: Write a playbook that includes both roles. Ensure that the `apache_setup

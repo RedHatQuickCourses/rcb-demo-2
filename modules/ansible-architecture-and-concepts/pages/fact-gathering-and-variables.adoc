@@ -1,0 +1,56 @@
+#  Fact Gathering and Variables
+
+```
+== Fact Gathering and Variables
+
+Ansible's fact-gathering mechanism is a crucial part of its configuration management capabilities. Facts are essentially data collected about the managed nodes, which can be used in playbooks to make them dynamic and adaptable to different environments.
+
+**Understanding Facts**
+
+Facts are pieces of information about the system on which Ansible is about to run. These can include details like operating system, hardware specifications, network interfaces, and more. Ansible gathers these facts using a module called 'setup'.
+
+**Gathering Facts**
+
+By default, Ansible gathers a set of basic facts. However, you can customize this by modifying the `gather_facts` option in the playbook or in the Ansible configuration file (`ansible.cfg`).
+
+Here's an example of how to explicitly enable fact gathering in a playbook:
+
+```yaml
+- name: Gather facts
+  hosts: all
+  gather_facts: yes
+  tasks:
+    - debug:
+        var: ansible_memtotal_mb
+```
+
+In this example, `ansible_memtotal_mb` is a variable that holds the total memory in megabytes on the target node.
+
+**Using Variables**
+
+Variables in Ansible are used to store values that can be used across tasks in a playbook. They can be defined in several ways:
+
+1. **Playbook Variables**: Defined within a playbook.
+2. **Group Variables**: Defined at the group level in the inventory file.
+3. **Host Variables**: Defined for individual hosts in the inventory file.
+4. **Extra Variables**: Passed to a playbook using the `-e` or `--extra-vars` option.
+
+Here's an example of defining a variable in a playbook:
+
+```yaml
+- name: Use a variable
+  hosts: all
+  vars:
+    my_variable: "This is a variable"
+  tasks:
+    - debug:
+        var: my_variable
+```
+
+In this example, `my_variable` is a user-defined variable that holds a string.
+
+**Hands-on Activity: Fact Gathering and Variables**
+
+1. **Set up your Ansible environment** if you haven't already.
+2. **Create an inventory file** (e.g., `inventory.ini`) with at least two hosts.
+3. **

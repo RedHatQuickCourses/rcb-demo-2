@@ -1,0 +1,89 @@
+#  Installing Ansible
+
+```
+== Installing Ansible
+
+Ansible can be installed on various platforms, including Linux, macOS, and Windows. This section will guide you through the installation process on a Linux system, which is a common choice for Ansible due to its compatibility with SSH, the underlying protocol Ansible uses for communication.
+
+### Prerequisites
+
+Before installing Ansible, ensure that your system meets the following requirements:
+
+- A 64-bit distribution of Linux (such as CentOS, Ubuntu, or Fedora)
+- Python 2.7 or 3.5+ (Ansible 2.9 and later versions require Python 3)
+- User with sudo or root privileges
+
+### Installation on Red Hat-based Systems (e.g., CentOS, Fedora)
+
+1. Update the system's package repository:
+
+   [source, terminal]
+   ----
+   sudo yum update -y
+   ----
+
+2. Install Ansible using the package manager:
+
+   [source, terminal]
+   ----
+   sudo yum install ansible -y
+   ----
+
+3. Verify the installation by checking the Ansible version:
+
+   [source, terminal]
+   ----
+   ansible --version
+   ----
+
+### Installation on Debian-based Systems (e.g., Ubuntu)
+
+1. Update the system's package repository:
+
+   [source, terminal]
+   ----
+   sudo apt update -y
+   ----
+
+2. Install Ansible using the package manager:
+
+   [source, terminal]
+   ----
+   sudo apt install software-properties-common -y
+   sudo apt add-apt-repository --yes universe
+   sudo apt install ansible -y
+   ----
+
+3. Verify the installation by checking the Ansible version:
+
+   [source, terminal]
+   ----
+   ansible --version
+   ----
+
+### Installation on macOS
+
+For macOS users, it is recommended to use a Linux virtual machine or a package manager like Homebrew:
+
+1. If using Homebrew, first install it:
+
+   [source, terminal]
+   ----
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ----
+
+2. Then, install Ansible:
+
+   [source, terminal]
+   ----
+   brew install ansible
+   ----
+
+3. Verify the installation by checking the Ansible version:
+
+   [source, terminal]
+   ----
+   ansible --version
+   ----
+
+After completing these steps, you should have Ansible successfully installed on your system. The

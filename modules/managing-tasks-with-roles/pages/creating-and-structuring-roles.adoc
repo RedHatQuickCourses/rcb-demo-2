@@ -1,0 +1,73 @@
+#  Creating and Structuring Roles
+
+```
+## Creating and Structuring Roles
+
+Roles in Ansible are a way to organize playbooks and related files. They promote the reuse of automation code and help maintain separation of concerns. This section will guide you through creating and structuring roles effectively.
+
+### Understanding Roles
+
+Ansible roles are a standardized way to organize playbooks, tasks, handlers, files, templates, and other Ansible artifacts. They provide a familiar structure for automation engineers and help maintain consistency across different projects.
+
+Roles have the following directory structure:
+
+```
+roles/<role_name>/
+├── tasks
+│   └── main.yml
+├── handlers
+│   └── main.yml
+├── templates
+├── files
+├── defaults
+│   └── main.yml
+└── vars
+    └── main.yml
+```
+
+- **tasks**: Contains the main tasks to be executed by the role.
+- **handlers**: Defines handlers that can be triggered by the tasks.
+- **templates**: Holds Jinja2 templates used for generating configuration files.
+- **files**: Stores any static files required by the role.
+- **defaults**: Provides default variable values that can be overridden by the playbook or inventory.
+- **vars**: Contains variable definitions that can be used across tasks within the role.
+
+### Creating a Role
+
+To create a new role, follow these steps:
+
+1. Create a new directory for your role inside the `roles` directory:
+
+   ```bash
+   mkdir -p roles/<role_name>/
+   ```
+
+2. Inside the role directory, create the necessary subdirectories and add your custom files. For example, to create a simple role named `my_role` with a single task:
+
+   ```bash
+   cd roles/<role_name>/
+   mkdir -p tasks/{main.yml}
+   touch defaults/main.yml
+   ```
+
+3. Add the required content to each file:
+
+   - `tasks/main.yml`:
+
+     ```yaml
+     ---
+     - name: My role task
+       ansible.builtin.shell: echo "Hello from my role!"
+     ```
+
+   - `defaults/main.yml`:
+
+     ```yaml
+     my_variable: 'default_value'
+     ```
+
+### Structuring Roles
+
+When structuring roles, consider the following best practices:
+
+- **Separation of Concerns**: Each role should focus on a single, well-defined task or set of related tasks

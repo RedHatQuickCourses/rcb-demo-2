@@ -1,0 +1,65 @@
+#  Playbook Structure and Syntax
+
+```
+== Writing Ansible Playbooks
+
+Ansible playbooks are written in the YAML (YAML Ain't Markup Language) format, which is human-readable and easy to understand. The structure of a playbook consists of three main sections: plays, tasks, and roles.
+
+=== Plays
+
+A play in an Ansible playbook defines a target set of hosts and the actions to be performed on them. A play is defined by the following key components:
+
+- *hosts*: The set of hosts to which the play will be applied. It can be a group of hosts defined in the inventory or a dynamic inventory script.
+- *gather_facts*: Whether to gather facts about the remote systems before running the play. This is often set to `true` for most use cases.
+- *tasks*: The list of tasks to be executed on the target hosts.
+
+Example:
+
+```yaml
+---
+- name: Ensure Apache is installed and running
+  hosts: webservers
+  gather_facts: yes
+  tasks:
+    - name: Install Apache package
+      apt:
+        name: apache2
+        state: present
+```
+
+=== Tasks
+
+Tasks are individual actions that Ansible performs on the managed nodes. Each task is defined by a module name and a set of parameters. Modules are reusable, standalone scripts that Ansible executes to configure systems.
+
+Example:
+
+```yaml
+    - name: Install Apache package
+      apt:
+        name: apache2
+        state: present
+```
+
+In this example, the `apt` module is used to ensure that the `apache2` package is present on the system.
+
+=== Variables, Templates, and Include Statements
+
+Playbooks can use variables to make the playbooks more dynamic and reusable. Variables can be defined at the play, host, group, or role level.
+
+Example:
+
+```yaml
+---
+- hosts: all
+  vars:
+    application_name: "my_app"
+  tasks:
+    - name: Copy application configuration
+      copy:
+        src: /path/to/source/{{ application_name }}/config.j2
+        dest: /etc/myapp/config.conf
+```
+
+In this example, the `application_name` variable is defined at the play level and then used within the `copy` module's source path.
+
+Templates allow you to maintain separate configuration files that can be rendered with variables. Jinja2 templating engine

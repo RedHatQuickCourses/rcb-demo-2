@@ -1,0 +1,7 @@
+#  Managing Tasks with Roles
+
+- **Understanding Roles**: Ansible Roles are a way to organize playbooks and related files into one directory, making them reusable and shareable. They promote the DRY (Don't Repeat Yourself) principle by allowing you to modularize your playbooks.
+
+- **Creating and Structuring Roles**: A role consists of a directory containing tasks, files, templates, templates variables, default variables, handlers, and metadata. This structure helps in maintaining and updating the code efficiently.
+
+- **Role Dependencies and Including Roles**: Roles can depend on other roles, allowing for complex tasks to be broken down into manageable parts. Roles can be included in playbooks using the 'roles' keyword, enabling the execution of specific tasks as needed.

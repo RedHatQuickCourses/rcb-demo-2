@@ -1,0 +1,4 @@
+* xref:writing-ansible-playbooks.adoc[]
+** xref:playbook-structure-and-syntax.adoc[]
+** xref:basic-playbook-examples.adoc[]
+** xref:variables-templates-and-include-statements.adoc[]
