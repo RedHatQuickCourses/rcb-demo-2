@@ -1,0 +1,3 @@
+* xref:hands-on-lab-interacting-with-the-command-line-assistant.adoc[]
+** xref:setting-up-and-using-the-command-line-assistant.adoc[]
+** xref:practical-exercises-for-answering-questions-troubleshooting-and-more.adoc[]

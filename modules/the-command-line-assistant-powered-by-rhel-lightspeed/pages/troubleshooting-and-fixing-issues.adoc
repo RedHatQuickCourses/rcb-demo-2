@@ -1,0 +1,45 @@
+#  Troubleshooting and fixing issues
+
+== Troubleshooting and Fixing Issues with RHEL Lightspeed
+
+RHEL Lightspeed, powered by its command-line assistant, offers a robust solution for troubleshooting and fixing various system issues. This feature is beneficial for both novice and experienced RHEL users, providing an accessible yet powerful way to diagnose and resolve problems.
+
+### The Command-Line Assistant for Troubleshooting
+
+The command-line assistant, integrated with RHEL Lightspeed, is designed to help users request information on how to troubleshoot the issues they encounter on their systems. By using a simple syntax, users can ask questions related to their specific problems and receive multiple possible solutions.
+
+#### Activities Supported by the Assistant
+
+1. **Answering RHEL-related questions:** Users can ask questions about various RHEL functionalities, configurations, or services, and the command-line assistant will provide relevant information and guidance.
+
+   Example:
+   ```
+   $ c "how to check the version of my RHEL installation"
+   ```
+
+2. **Troubleshooting and fixing issues:** The assistant can help diagnose and resolve a wide range of system issues, from network errors to service failures and SELinux problems.
+
+   Example: Troubleshooting an SSHD service failing to start
+   ```
+   $ c -w 1 "what_is_this"
+   ```
+   The `-w 1` option includes the output from the last command that was run, allowing the assistant to provide more context-aware suggestions. In this case, the assistant might recommend checking the log files using `journalctl -xe sshd`.
+
+   Example: Troubleshooting SELinux issues
+   ```
+   $ c "I am experiencing SELinux-related problems. Can you guide me through the troubleshooting process?"
+   ```
+   The assistant will then provide step-by-step instructions, such as checking SELinux status, identifying problematic applications, and adjusting policies as needed.
+
+### Hands-on Lab: Interacting with the Command-Line Assistant
+
+In this hands-on lab, you will learn how to set up and use the command-line assistant to troubleshoot various system issues.
+
+#### Setting Up and Using the Command-Line Assistant
+
+1. Access your RHEL system and ensure that RHEL Lightspeed is installed and enabled.
+2. Launch the terminal and type the following command to initiate the command-line assistant:
+   ```
+   $ c
+   ```
+3. Begin

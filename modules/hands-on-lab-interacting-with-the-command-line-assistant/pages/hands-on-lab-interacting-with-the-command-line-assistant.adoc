@@ -1,0 +1,16 @@
+#  Hands-on Lab: Interacting with the Command-Line Assistant
+
+**Hands-on Lab: Interacting with the Command-Line Assistant**
+
+This lab provides practical experience in using the command-line assistant powered by RHEL Lightspeed. Participants will learn to set up and utilize the assistant for answering RHEL-related questions and troubleshooting issues. Key activities include:
+
+- Installing the command-line assistant (Chapters 2 & 3)
+- Provisioning the assistant to RHEL deployments with Red Hat Satellite
+- Interacting with the assistant on RHEL systems (Chapter 4)
+  - Asking questions using the "c" command
+  - Attaching files, checking history, redirecting command output, and enabling terminal activity capture
+- Utilizing the assistant for debugging or troubleshooting system issues (Chapter 5)
+  - Examples: Troubleshooting SSHD service failure and SELinux issues
+- Submitting feedback about the assistant's responses
+
+The lab emphasizes hands-on practice to ensure users can effectively leverage AI-driven expertise for configuring, managing, and troubleshooting RHEL.

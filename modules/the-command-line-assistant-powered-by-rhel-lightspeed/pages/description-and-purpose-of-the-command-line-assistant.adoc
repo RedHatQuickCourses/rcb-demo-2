@@ -1,0 +1,33 @@
+#  Description and purpose of the command-line assistant
+
+== The Command-Line Assistant Powered by RHEL Lightspeed
+
+The command-line assistant, powered by RHEL Lightspeed, is an innovative tool designed to enhance the user experience for both novice and experienced Red Hat Enterprise Linux (RHEL) users. It provides a conversational interface to interact with RHEL using the command line, making complex tasks more accessible and straightforward.
+
+### Description
+
+The command-line assistant is essentially an AI-driven tool that leverages Large Language Models (LLMs) to understand and respond to user queries related to RHEL. It can answer questions, guide users through troubleshooting processes, and even help decipher log entries. The assistant is integrated directly into the RHEL command line, allowing users to engage with it using familiar command syntax.
+
+### Purpose
+
+The primary purpose of the command-line assistant is to simplify the interaction with RHEL by providing:
+
+1. **Instantaneous Support**: Users can get immediate assistance without leaving their command-line environment. This is particularly beneficial for quick lookups or when immediate action is required.
+
+2. **Learning Tool**: For less experienced users, the assistant serves as a learning resource. It can explain concepts, guide through procedures, and offer insights into RHEL functionalities.
+
+3. **Efficiency for Experienced Users**: Experienced users can leverage the assistant to save time on repetitive tasks, such as searching for specific commands or understanding obscure error messages. It can also aid in troubleshooting by suggesting possible solutions based on symptoms described.
+
+4. **Consistency**: The assistant ensures that users receive accurate and consistent information, reducing the risk of misinterpretation that can occur with manual searches or less reliable sources.
+
+5. **Integration**: Being a part of the RHEL command line, the assistant seamlessly integrates with existing workflows, minimizing the learning curve associated with adopting new tools.
+
+### Interaction Process
+
+When a user inputs a query, the command-line assistant follows a structured process to deliver a relevant response:
+
+1. **Input Reception**: The assistant receives the user's question or command via the command line.
+
+2. **Logging**: All interactions are logged locally for future reference and to maintain a chat history. These logs also contribute to improving the service by providing real-world usage data.
+
+3. **Processing**: The input is sent to the configured

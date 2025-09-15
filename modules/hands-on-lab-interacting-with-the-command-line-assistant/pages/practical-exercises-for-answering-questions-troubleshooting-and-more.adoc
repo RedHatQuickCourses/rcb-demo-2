@@ -1,0 +1,53 @@
+#  Practical exercises for answering questions, troubleshooting, and more
+
+== Hands-on Lab: Interacting with the Command-Line Assistant
+
+In this hands-on lab, you will learn how to effectively interact with the command-line assistant powered by RHEL Lightspeed. This lab is designed to help you understand how to ask questions, troubleshoot issues, and leverage the assistant for various tasks.
+
+### Setting up and using the command-line assistant
+
+Before you begin, ensure that the command-line assistant is installed and provisioned to your RHEL deployments as described in Chapters 2 and 3.
+
+To start using the command-line assistant, simply type `c` followed by your question in quotation marks. For example:
+
+```
+$ c "What is the status of the sshd service?"
+```
+
+The assistant will process your request and provide a relevant response based on the information available.
+
+### Practical Exercises
+
+#### Exercise 1: Answering RHEL-related questions
+
+Ask the assistant various questions to get comfortable with its capabilities. Here are some examples:
+
+1. `c "What is the default shell for the root user in RHEL?"`
+2. `c "How do I check the version of my RHEL installation?"`
+3. `c "What is the purpose of the yum command in RHEL?"`
+
+#### Exercise 2: Troubleshooting issues
+
+Use the command-line assistant to troubleshoot common RHEL issues. Refer to Chapter 5 for examples and syntax.
+
+1. **Troubleshooting SSHD service failing to start**
+
+   Use the `-w 1` option to include the output from the last command that was run. For example:
+
+   ```
+   $ c -w 1 "help me understand the error when failing to start sshd service"
+   ```
+
+   Then, run the suggested `journalctl -xeu sshd.service` command and pipe the output to the assistant for further analysis.
+
+2. **Troubleshooting SELinux issues**
+
+   Ask the assistant for guidance on resolving SELinux-related problems. For example:
+
+   ```
+   $ c "I am experiencing issues with SELinux. Can you provide a list of things to troubleshoot?"
+   ```
+
+#### Exercise 3: Leveraging additional features
+
+Explore other functionalities offered by the command-line assistant, such as attaching files, checking history, redirecting command output, and submitting feedback

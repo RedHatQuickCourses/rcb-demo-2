@@ -1,9 +1,9 @@
-=  Ansible Basics
+=   Basics of RHEL Lightspeed
 :navtitle: Home
 
 == Introduction
 
-Course Title:  Ansible Basics
+Course Title:   Basics of RHEL Lightspeed
 
 Description:
 Course description FIXME
@@ -13,15 +13,11 @@ Duration: FIXME hours
 == Topics covered in this course
 
 
-*  Introduction to Ansible
+*  Introduction to RHEL Lightspeed
 
-*  Ansible Architecture and Concepts
+*  The Command-Line Assistant Powered by RHEL Lightspeed
 
-*  Writing Ansible Playbooks
-
-*  Managing Tasks with Roles
-
-*  Hands-on Lab: Ansible Basics
+*  Hands-on Lab: Interacting with the Command-Line Assistant
 
 
 

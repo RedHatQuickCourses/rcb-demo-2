@@ -1,0 +1,13 @@
+#  Introduction to RHEL Lightspeed
+
+```
+RHEL Lightspeed is an intelligent management platform designed to simplify and enhance the RHEL system environment for users of all experience levels. It offers a range of functionalities, including:
+
+- Access to Red Hat Knowledge Centered Service (KCS) articles and RHEL documentation through the command-line assistant.
+- Assistance with answering RHEL-related questions.
+- Guidance for troubleshooting and fixing issues.
+- Support in understanding log files and seeking recommendations.
+- Facilitation of interactive workflows for issue resolution, feature implementation, and information retrieval.
+
+By leveraging these features, both less experienced and seasoned RHEL users can benefit from streamlined system management and enhanced problem-solving capabilities.
+```

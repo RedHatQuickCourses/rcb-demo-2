@@ -1,0 +1,33 @@
+#  Activities supported by the assistant:
+
+== Activities Supported by the Command-Line Assistant Powered by RHEL Lightspeed
+
+The command-line assistant powered by RHEL Lightspeed is designed to support a variety of activities, making it an invaluable tool for both novice and experienced RHEL users. Here are some of the key activities it can assist with:
+
+=== Answering RHEL Related Questions
+
+One of the primary functions of the command-line assistant is to answer questions related to RHEL. Users can ask anything from basic inquiries about RHEL features to more complex questions about system configurations and troubleshooting. The assistant leverages information from Red Hat Knowledge Centered Service (KCS) articles, RHEL documentation, and other Red Hat resources to provide accurate and relevant answers.
+
+To use this feature, simply type `c "question"` in the command line, replacing "question" with your actual query. For example:
+
+```
+$ c "How do I check the system's memory usage in RHEL?"
+```
+
+=== Troubleshooting and Fixing Issues
+
+The command-line assistant is also equipped to help users troubleshoot and resolve issues. It can provide guidance on diagnosing problems, suggest possible solutions, and even walk users through the steps to implement those solutions. This feature is particularly useful for less experienced users who may not be familiar with common troubleshooting techniques.
+
+For instance, if a user encounters an error while trying to install a package, they can ask the assistant for help. The assistant might respond with a suggested solution, such as checking the package repository or verifying the package's compatibility with the current system.
+
+=== Deciphering Log Entries
+
+Log files are a crucial source of information for diagnosing system issues, but their content can often be cryptic and difficult to interpret. The command-line assistant can help users understand log entries by providing explanations and context. This can save users a significant amount of time and effort that would otherwise be spent deciphering log messages manually.
+
+=== Asking for Recommendations
+
+In addition to answering questions and providing troubleshooting assistance, the command-line assistant can also offer recommendations. For example, a user might ask for suggestions on how to optimize system performance or secure their RHEL environment. The assistant can then provide tailored advice based on the user's specific situation and needs.
+
+=== Interactive Workflows
+
+The command-line assistant is

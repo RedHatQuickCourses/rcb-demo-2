@@ -1,0 +1,5 @@
+* xref:the-command-line-assistant-powered-by-rhel-lightspeed.adoc[]
+** xref:description-and-purpose-of-the-command-line-assistant.adoc[]
+** xref:activities-supported-by-the-assistant.adoc[]
+** xref:answering-rhel-related-questions.adoc[]
+** xref:troubleshooting-and-fixing-issues.adoc[]

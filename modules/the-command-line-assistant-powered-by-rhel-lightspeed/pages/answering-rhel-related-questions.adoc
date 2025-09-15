@@ -1,0 +1,39 @@
+#  Answering RHEL related questions
+
+== Answering RHEL Related Questions
+
+The command-line assistant powered by RHEL Lightspeed is a powerful tool for answering RHEL related questions. It leverages extensive knowledge from Red Hat's resources, including Knowledge Centered Service (KCS) articles and RHEL documentation, to provide accurate and relevant responses.
+
+### How to Use the Command-Line Assistant for Answering Questions
+
+To utilize the command-line assistant for answering RHEL related questions, follow these steps:
+
+1. **Access the Command-Line Interface**: Log in to your RHEL system via the command line.
+
+2. **Invoke the Assistant**: Use the "c" command followed by your question in quotation marks. For example:
+   ```
+   $ c "How do I check the version of my RHEL system?"
+   ```
+
+3. **Review the Response**: The assistant will process your request and return a response based on its knowledge base. Review the provided information carefully to ensure it addresses your question.
+
+### Examples of Questions and Responses
+
+Here are some examples of questions you can ask the command-line assistant and the types of responses you might receive:
+
+- **Question**: $ c "What is the command to list all running services in RHEL?"
+  **Response**: The command to list all running services in RHEL is `systemctl list-units --type=service --state=running`.
+
+- **Question**: $ c "How can I find out which package provides a specific file in RHEL?"
+  **Response**: You can use the `rpm -qf` command followed by the file path to find the package that provides the file. For example, `rpm -qf /path/to/your/file`.
+
+- **Question**: $ c "What are the steps to configure a static IP address in RHEL?"
+  **Response**: The assistant will provide a step-by-step guide, which may include editing the network configuration file, disabling NetworkManager if necessary, and restarting the network service.
+
+### Important Considerations
+
+While the command-line assistant is designed to be helpful, it's crucial to remember that:
+
+- **Human Review is Essential**: Always verify the information provided by the assistant before applying it to your system. AI-generated responses should not replace human expertise and judgment.
+
+- **Avoid Sensitive Data**: Do not input personal, business-sensitive

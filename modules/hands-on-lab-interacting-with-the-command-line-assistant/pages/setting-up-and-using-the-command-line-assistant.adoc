@@ -1,0 +1,42 @@
+#  Setting up and using the command-line assistant
+
+== Hands-on Lab: Interacting with the Command-Line Assistant
+
+In this hands-on lab, you will learn how to set up and use the command-line assistant powered by RHEL Lightspeed on your RHEL systems. This lab is designed for both less experienced and experienced users who want to leverage the command-line interface effectively.
+
+### 4.1. Setting Up the Command-Line Assistant
+
+Before using the command-line assistant, ensure that it is installed and properly configured on your RHEL system. Follow the instructions provided in Chapter 2 (Installing the Command-Line Assistant Powered by RHEL Lightspeed) and Chapter 3 (Provisioning the Command-Line Assistant to RHEL Deployments with Red Hat Satellite) to install and provision the assistant.
+
+### 4.2. Using the Command-Line Assistant
+
+Once the command-line assistant is set up, you can start using it to answer questions, troubleshoot issues, and more. To use the assistant, follow these steps:
+
+1. Open a terminal window on your RHEL system.
+2. Type the command `c` followed by your question in quotation marks. For example:
+
+   ```
+   $ c "What is the default shell for new users in RHEL?"
+   ```
+
+3. Press Enter to submit your question. The command-line assistant will process your request and provide an accurate response based on the available information.
+
+### 4.3. Practical Exercises
+
+Now, let's practice using the command-line assistant with some real-world examples:
+
+#### Exercise 1: Answering Questions
+
+Ask the command-line assistant at least three different RHEL-related questions. Make sure to document the questions and their responses for future reference.
+
+#### Exercise 2: Troubleshooting
+
+Identify a common issue or error message you might encounter while working with RHEL. Use the command-line assistant to help diagnose and resolve the problem. Document the steps taken and the outcome.
+
+#### Exercise 3: Deciphering Log Entries
+
+Find a log entry from your RHEL system that you find confusing or unclear. Use the command-line assistant to help interpret the log entry and explain its meaning.
+
+### 4.4. Additional Features
+
+The command-line assistant offers several additional features to enhance your RHEL experience. Explore the following functionalities during this

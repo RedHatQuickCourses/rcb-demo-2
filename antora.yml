@@ -1,18 +1,14 @@
 name: rcb-demo-2
-title:  Ansible Basics
+title:   Basics of RHEL Lightspeed
 version: 1
 nav:
 - modules/ROOT/nav.adoc
 - modules/LABENV/nav.adoc
 
-- modules/introduction-to-ansible/nav.adoc
+- modules/introduction-to-rhel-lightspeed/nav.adoc
 
-- modules/ansible-architecture-and-concepts/nav.adoc
+- modules/the-command-line-assistant-powered-by-rhel-lightspeed/nav.adoc
 
-- modules/writing-ansible-playbooks/nav.adoc
-
-- modules/managing-tasks-with-roles/nav.adoc
-
-- modules/hands-on-lab-ansible-basics/nav.adoc
+- modules/hands-on-lab-interacting-with-the-command-line-assistant/nav.adoc
 
 - modules/appendix/nav.adoc
