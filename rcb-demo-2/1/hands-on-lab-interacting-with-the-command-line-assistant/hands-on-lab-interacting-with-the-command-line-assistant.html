@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Inventory, Playbooks, and Modules :: Basics of RHEL Lightspeed</title>
+    <title>Hands-on Lab: Interacting with the Command-Line Assistant :: Basics of RHEL Lightspeed</title>
+    <link rel="prev" href="../the-command-line-assistant-powered-by-rhel-lightspeed/troubleshooting-and-fixing-issues.html">
+    <link rel="next" href="setting-up-and-using-the-command-line-assistant.html">
     <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
@@ -89,15 +91,15 @@
   </li>
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../hands-on-lab-interacting-with-the-command-line-assistant/hands-on-lab-interacting-with-the-command-line-assistant.html">Hands-on Lab: Interacting with the Command-Line Assistant</a>
+    <a class="nav-link" href="hands-on-lab-interacting-with-the-command-line-assistant.html">Hands-on Lab: Interacting with the Command-Line Assistant</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../hands-on-lab-interacting-with-the-command-line-assistant/setting-up-and-using-the-command-line-assistant.html">Setting up and using the command-line assistant</a>
+    <a class="nav-link" href="setting-up-and-using-the-command-line-assistant.html">Setting up and using the command-line assistant</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../hands-on-lab-interacting-with-the-command-line-assistant/practical-exercises-for-answering-questions-troubleshooting-and-more.html">Practical exercises for answering questions, troubleshooting, and more</a>
+    <a class="nav-link" href="practical-exercises-for-answering-questions-troubleshooting-and-more.html">Practical exercises for answering questions, troubleshooting, and more</a>
   </li>
 </ul>
   </li>
@@ -139,7 +141,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Basics of RHEL Lightspeed</a></li>
-    <li><a href="inventory-playbooks-and-modules.html">Inventory, Playbooks, and Modules</a></li>
+    <li><a href="hands-on-lab-interacting-with-the-command-line-assistant.html">Hands-on Lab: Interacting with the Command-Line Assistant</a></li>
   </ul>
 </nav>
 </div>
@@ -148,59 +150,48 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Inventory, Playbooks, and Modules</h1>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">== Inventory, Playbooks,, and Modules
-
-Ansible's power lies in its ability to automate the configuration of systems and the deployment of applications. To achieve this, Ansible uses three fundamental concepts: Inventory, Playbooks, and Modules. Understanding these components is crucial for effectively harnessing Ansible's capabilities.
-
-=== Inventory
-
-The **Inventory** is a file that defines the hosts (systems) on which Ansible will operate. It can be as simple as a single IP address or a complex structure including variables, groups, and dynamics inventories. The inventory file is typically named `inventory` and placed in the `/etc/ansible` directory by default.
-
-Ansible supports several inventory file formats, including INI, YAML, and JSON. Here's a basic example of an inventory file in INI format:
-
-[webservers]
-web1.example.com
-web2.example.com
-
-[databases]
-db1.example.com
-
-This inventory file defines two groups: `webservers` and `databases`. Each group contains a list of hostnames or IP addresses.
-
-=== Playbooks
-
-**Playbooks** are Ansible's configuration, deployment, and orchestration language. They are written in YAML and describe a policy you want to enforce on your infrastructure. Playbooks can be used to manage configurations, deploy applications, or orchestrate complex multi-tiered application deployments.
-
-A simple playbook might look like this:
-
----
-- hosts: webservers
-  become: yes
-  tasks:
-  - name: Ensure Apache is installed
-    apt:
-      name: apache2
-      state: present
-
-This playbook targets the `webservers` group defined in the inventory. It uses the `apt` module to ensure that the `apache2` package is installed.
-
-=== Modules
-
-**Modules** are the building blocks of Ansible. They are small, standalone scripts that perform specific tasks. Ansible comes with a large collection of modules for managing packages, services, files, and more.
-
-Modules can be categorized into different types:
-
-- **Command modules**: Execute commands on the managed nodes.
-- **Package modules**: Manage software packages.
-- **Service modules**: Control system services.
-- **File modules**: Manage files and directories.
-
-For example, the `apt` module used in the playbook above manages the APT package manager on Debian-based systems.</code></pre>
+<h1 class="page">Hands-on Lab: Interacting with the Command-Line Assistant</h1>
+<div class="paragraph">
+<p><strong>Hands-on Lab: Interacting with the Command-Line Assistant</strong></p>
 </div>
+<div class="paragraph">
+<p>This lab provides practical experience in using the command-line assistant powered by RHEL Lightspeed. Participants will learn to set up and utilize the assistant for answering RHEL-related questions and troubleshooting issues. Key activities include:</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p>Installing the command-line assistant (Chapters 2 &amp; 3)</p>
+</li>
+<li>
+<p>Provisioning the assistant to RHEL deployments with Red Hat Satellite</p>
+</li>
+<li>
+<p>Interacting with the assistant on RHEL systems (Chapter 4)</p>
+</li>
+<li>
+<p>Asking questions using the "c" command</p>
+</li>
+<li>
+<p>Attaching files, checking history, redirecting command output, and enabling terminal activity capture</p>
+</li>
+<li>
+<p>Utilizing the assistant for debugging or troubleshooting system issues (Chapter 5)</p>
+</li>
+<li>
+<p>Examples: Troubleshooting SSHD service failure and SELinux issues</p>
+</li>
+<li>
+<p>Submitting feedback about the assistant&#8217;s responses</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The lab emphasizes hands-on practice to ensure users can effectively leverage AI-driven expertise for configuring, managing, and troubleshooting RHEL.</p>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="../the-command-line-assistant-powered-by-rhel-lightspeed/troubleshooting-and-fixing-issues.html">Troubleshooting and fixing issues</a></span>
+  <span class="next"><a href="setting-up-and-using-the-command-line-assistant.html">Setting up and using the command-line assistant</a></span>
+</nav>
 </article>
   </div>
 </main>
