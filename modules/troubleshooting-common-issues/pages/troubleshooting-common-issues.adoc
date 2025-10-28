@@ -1,0 +1,8 @@
+#  Troubleshooting Common Issues
+
+- **Troubleshooting Common Issues** in Red Hat OpenShift (RHOCP) involves identifying and resolving issues within the cluster, as well as debugging application failures.
+  - Key strategies include understanding and utilizing OpenShift's logging and monitoring tools for effective troubleshooting.
+  - Cluster issues can be identified through the OpenShift web console or command-line interface (CLI), allowing for timely resolution.
+  - Application failures can be debugged by examining pod logs, events, and resource usage, often using tools like `oc logs`, `oc events`, and `oc describe`.
+  - OpenShift's built-in monitoring tools, such as Prometheus and Grafana, provide insights into cluster health and performance, aiding in proactive issue detection.
+  - Familiarity with common error messages and their resolutions is essential for efficient troubleshooting in RHOCP.

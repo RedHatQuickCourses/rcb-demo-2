@@ -1,0 +1,53 @@
+#  Identifying and resolving cluster issues
+
+## Identifying and Resolving Cluster Issues
+
+### Overview
+
+Red Hat OpenShift Container Platform (RHOCP) clusters, while robust, can encounter issues due to various reasons. As a cluster administrator, it's crucial to identify and resolve these problems efficiently to maintain a healthy and productive environment. This section will guide you through common cluster issues, their identification, and resolution methods.
+
+### Key Components Involved in Troubleshooting
+
+Before diving into specific issues, let's briefly review the key components of RHOCP that play a significant role in troubleshooting:
+
+- **Master Node**: The master node manages the cluster and its components, including the API server, controller manager, and etcd.
+- **Infrastructure Nodes**: These nodes host infrastructure components like the registry, router, and monitoring services.
+- **Application Nodes**: Application nodes run user-deployed applications in containers.
+
+### Identifying Cluster Issues
+
+1. **Monitoring Cluster Health**
+
+   Use the OpenShift web console or command-line tools like `oc` or `kubectl` to monitor the overall health of your cluster. Check the status of nodes, pods, and services.
+
+   ```bash
+   oc get nodes
+   oc get pods --all-namespaces
+   oc get services --all-namespaces
+   ```
+
+2. **Reviewing Cluster Events**
+
+   Cluster events provide valuable insights into what's happening within the cluster. Use the following command to view recent events:
+
+   ```bash
+   oc get events --all-namespaces
+   ```
+
+3. **Checking Logs**
+
+   Logs from various cluster components can help pinpoint issues. For example, to check logs from the OpenShift API server:
+
+   ```bash
+   oc logs -n openshift-apiserver api-server-<hash>
+   ```
+
+### Resolving Common Cluster Issues
+
+1. **Node Issues**
+
+   - **Unhealthy Nodes**: If a node is marked as 'NotReady' or 'Unready', investigate its status using `oc describe node <node_name>`. Common causes include network issues, disk space exhaustion, or resource contention. Address the underlying problem and, if necessary, drain and cordon the node before rebooting.
+
+   - **Nodes Not Joining the Cluster**: Verify that the node's configuration matches the master's, including network settings, Docker version, and kubelet configuration. Ensure that the node's firewall allows the necessary ports for communication with the master.
+
+2. **Pod and Deployment Fail

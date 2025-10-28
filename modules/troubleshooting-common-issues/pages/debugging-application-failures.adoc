@@ -1,0 +1,63 @@
+#  Debugging application failures
+
+## Debugging Application Failures in Red Hat OpenShift (RHOCP)
+
+Debugging application failures in Red Hat OpenShift (RHOCP) requires a systematic approach, leveraging the platform's built-in tools and understanding its architecture. This section will guide you through identifying and resolving common application failures in RHOCP.
+
+### Understanding Application Failure Scenarios
+
+Application failures in RHOCP can stem from various sources, including misconfigurations, resource constraints, or underlying infrastructure issues. To effectively debug these failures, it's crucial to understand the RHOCP architecture and its key components: Master Node, Infrastructure Nodes, and Application Nodes.
+
+### Step-by-Step Debugging Process
+
+1. **Check the Application Logs**
+
+   The first step in debugging application failures is to examine the application logs. In RHOCP, you can access application logs using the `oc logs` command. For instance, to view logs for a pod named `my-app`, execute:
+
+   ```
+   oc logs my-app-<random-string>
+   ```
+
+   Replace `<random-string>` with the actual random string assigned to your pod.
+
+2. **Inspect Pod Status**
+
+   Use the `oc status` command to check the overall health of your pods. This command provides a high-level overview of your application's status, including running, pending, and failed pods.
+
+   ```
+   oc status
+   ```
+
+   To get detailed information about a specific pod, use:
+
+   ```
+   oc describe pod <pod-name>
+   ```
+
+3. **Analyze Events**
+
+   RHOCP generates events for various occurrences, such as pod scheduling, termination, and errors. To view events related to a specific resource, use:
+
+   ```
+   oc get events
+   ```
+
+   Or, for events related to a particular namespace:
+
+   ```
+   oc get events -n <namespace>
+   ```
+
+4. **Check Resource Limits and Quotas**
+
+   Application failures can also be caused by insufficient resources. Verify if your application pods are consuming more resources than allocated. You can check resource usage and limits with:
+
+   ```
+   oc describe pod <pod-name>
+   ```
+
+   In the output, look for `Limits` and `Requests` under `Containers`.
+
+5. **Investigate Network Issues**
+
+   Network-related problems can lead to application failures. Use the `oc adm top node` command to inspect node network statistics. Additionally, check service and route configurations

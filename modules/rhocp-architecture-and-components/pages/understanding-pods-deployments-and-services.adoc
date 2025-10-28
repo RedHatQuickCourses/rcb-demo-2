@@ -1,0 +1,63 @@
+#  Understanding Pods, Deployments, and Services
+
+## Understanding Pods, Deployments, and Services
+
+In Red Hat OpenShift Container Platform (RHOCP), Pods, Deployments, and Services are fundamental concepts that facilitate the deployment, scaling, and networking of containerized applications. This section will provide detailed explanations of each concept, along with practical hands-on activities to solidify your understanding.
+
+### Pods
+
+A Pod is the basic execution unit of an RHOCP application. It represents a single instance of a running process in your cluster and can contain one or more containers. Containers within a Pod share the same network namespace, allowing them to communicate with each other using localhost.
+
+**Hands-on Activity: Creating a Simple Pod**
+
+1. Log in to your RHOCP cluster using `oc login`.
+2. Create a new project: `oc new-project pod-demo`.
+3. Create a Pod definition file named `pod.yaml`:
+
+   ```yaml
+   apiVersion: v1
+   kind: Pod
+   metadata:
+     name: my-pod
+   spec:
+     containers:
+     - name: my-container
+       image: nginx:1.14.2
+       ports:
+       - containerPort: 80
+   ```
+
+4. Apply the Pod definition: `oc apply -f pod.yaml`.
+5. Verify the Pod status: `oc get pods`.
+6. Exec into the Pod: `oc exec -it my-pod -- /bin/bash`.
+7. Exit the Pod: `exit`.
+8. Delete the Pod: `oc delete pod my-pod`.
+
+### Deployments
+
+Deployments in RHOCP manage the lifecycle of your Pods and ensure the desired number of Pod replicas are running. They provide declarative updates for your applications, rolling updates, and rollbacks.
+
+**Hands-on Activity: Creating a Deployment**
+
+1. In the same project (`pod-demo`), create a Deployment definition file named `deployment.yaml`:
+
+   ```yaml
+   apiVersion: apps/v1
+   kind: Deployment
+   metadata:
+     name: my-deployment
+   spec:
+     replicas: 3
+     selector:
+       matchLabels:
+         app: my-app
+     template:
+       metadata:
+         labels:
+           app: my-app
+       spec:
+         containers:
+         - name: my-container
+           image: nginx:1.14.2
+           ports:
+           - containerPort: 80

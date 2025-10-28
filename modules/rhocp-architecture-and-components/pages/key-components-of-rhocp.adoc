@@ -1,0 +1,36 @@
+#  Key components of RHOCP
+
+```
+## Key Components of Red Hat OpenShift (RHOCP)
+
+Red Hat OpenShift Container Platform (RHOCP) is a comprehensive enterprise Kubernetes platform. It provides a robust set of components that work together to deliver a complete solution for developing, deploying, and managing containerized applications at scale. Here, we will explore the key components of RHOCP:
+
+### 1. Master Node
+
+The **Master Node** is the control plane of the OpenShift cluster. It houses critical components responsible for managing the cluster and its applications. The main components running on the Master Node include:
+
+- **API Server**: This is the front-end for the OpenShift control plane. It exposes the OpenShift API and is responsible for REST handling, Kubernetes API validation, and authentication.
+
+- **etcd**: A distributed key-value store used for consistent, reliable storage of configuration data. It's the backbone for all cluster data in OpenShift.
+
+- **Controller Manager**: This component manages various controllers that handle the state of the cluster, ensuring it matches the desired state defined by users and administrators.
+
+- **Scheduler**: The Scheduler is responsible for placing pods (the smallest deployable units in Kubernetes) onto nodes based on resource availability and other constraints.
+
+### 2. Infrastructure Nodes
+
+**Infrastructure Nodes** are specialized nodes designed to host infrastructure components. These components provide services necessary for the cluster's operation but are not part of the application workloads. Examples of infrastructure components that might run on these nodes include:
+
+- **Registry Server**: Stores Docker images used by the cluster.
+
+- **Router**: Exposes routes to provide external access to services within the cluster.
+
+- **Metrics Server**: Collects resource usage data (CPU, memory) from nodes and pods, providing input to the horizontal pod autoscaler.
+
+### 3. Application Nodes
+
+**Application Nodes** are where the actual application containers run. They are managed by the Master Node and can be scaled up or down based on demand. Each node runs the container runtime (such as CRI-O or Docker) and the kubelet agent, which communicates with the Master Node's API server to ensure the nodes' status is up-to-date.
+
+### Understanding Pods, Deployments, and Services
+
+- **Pods**: The smallest deployable units in OpenShift. A Pod represents a single instance of a running process in your cluster.

@@ -1,9 +1,9 @@
-=   Basics of RHEL Lightspeed
+=  Red Hat OpenShift (RHOCP)
 :navtitle: Home
 
 == Introduction
 
-Course Title:   Basics of RHEL Lightspeed
+Course Title:  Red Hat OpenShift (RHOCP)
 
 Description:
 Course description FIXME
@@ -13,11 +13,9 @@ Duration: FIXME hours
 == Topics covered in this course
 
 
-*  Introduction to RHEL Lightspeed
+*  RHOCP Architecture and Components
 
-*  The Command-Line Assistant Powered by RHEL Lightspeed
-
-*  Hands-on Lab: Interacting with the Command-Line Assistant
+*  Troubleshooting Common Issues
 
 
 

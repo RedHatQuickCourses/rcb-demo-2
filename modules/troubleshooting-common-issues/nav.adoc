@@ -1,0 +1,4 @@
+* xref:troubleshooting-common-issues.adoc[]
+** xref:identifying-and-resolving-cluster-issues.adoc[]
+** xref:debugging-application-failures.adoc[]
+** xref:utilizing-openshift-logging-and-monitoring-tools.adoc[]

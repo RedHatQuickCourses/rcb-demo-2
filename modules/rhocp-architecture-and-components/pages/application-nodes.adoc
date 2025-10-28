@@ -1,0 +1,65 @@
+#  Application Nodes
+
+```
+== Application Nodes
+
+Application Nodes, also known as worker nodes, are the core components of Red Hat OpenShift (RHOCP) where applications and their containers run. They are responsible for executing the tasks assigned by the control plane (Master Node) and providing the necessary computing resources for the applications.
+
+### Overview
+
+Application Nodes are virtual or physical machines that host the application containers. They are managed by the control plane and automatically receive and execute containerized applications based on the defined Deployments and Pods.
+
+### Key Features
+
+1. **Container Execution**: Application Nodes pull container images from the registry specified in the Deployment configuration and execute them as Pods.
+2. **Resource Management**: Nodes manage their resources (CPU, memory, storage) and report their status back to the control plane. The control plane then decides which Nodes are best suited to run a particular Pod based on resource availability and other constraints.
+3. **Node Health Checks**: RHOCP constantly monitors the health of the Application Nodes. If a Node becomes unresponsive or unhealthy, the control plane removes its Pods and creates new ones on other available Nodes.
+4. **Scalability**: You can easily scale your application horizontally by adding or removing Application Nodes. RHOCP automatically redistributes the Pods across the available Nodes.
+
+### Hands-on Activity: Deploying an Application on an Application Node
+
+To understand how Application Nodes function, let's deploy a simple application.
+
+1. **Create a Project**:
+   Use the following command to create a new project named 'my-project':
+
+   ```
+   oc new-project my-project
+   ```
+
+2. **Deploy an Application**:
+   Create a Deployment configuration for a simple Nginx application using the following YAML:
+
+   ```yaml
+   apiVersion: apps/v1
+   kind: Deployment
+   metadata:
+     name: nginx-deployment
+   spec:
+     selector:
+       matchLabels:
+         app: nginx
+     replicas: 3
+     template:
+       metadata:
+         labels:
+           app: nginx
+       spec:
+         containers:
+         - name: nginx
+           image: nginx:1.14.2
+           ports:
+           - containerPort: 80
+   ```
+
+   Apply the configuration with:
+
+   ```
+   oc apply -f nginx-deployment.yaml
+   ```
+
+3. **Check Pods**:
+   Verify that the Pods are running on the Application Nodes:
+
+   ```
+   oc get pods -o

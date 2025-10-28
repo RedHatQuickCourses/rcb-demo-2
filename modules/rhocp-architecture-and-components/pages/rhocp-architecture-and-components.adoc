@@ -1,0 +1,15 @@
+#  RHOCP Architecture and Components
+
+Red Hat OpenShift Container Platform (RHOCP) architecture is built on a multi-node setup, each with specific roles.
+
+- **Overview of RHOCP**: RHOCP is an enterprise-grade Kubernetes platform for developing and deploying containerized applications. It provides a robust ecosystem for microservices, DevOps, and application modernization.
+
+- **Key components of RHOCP**:
+  - **Master Node**: This is the control plane of the cluster, managing overall platform activities like scheduling, scaling, and networking.
+  - **Infrastructure Nodes**: These nodes provide essential services such as networking, storage, and monitoring, ensuring the smooth functioning of the cluster.
+  - **Application Nodes**: These are worker nodes where application containers are deployed and managed.
+
+- **Understanding Pods, Deployments, and Services**:
+  - **Pods**: The smallest deployable units in the OpenShift environment, representing a single instance of a running process.
+  - **Deployments**: Controlling updates to Pods; they ensure the right number of Pod replicas are running and update them when necessary.
+  - **Services**: Enable communication between different components within the cluster by providing a stable endpoint, regardless of underlying Pod changes.

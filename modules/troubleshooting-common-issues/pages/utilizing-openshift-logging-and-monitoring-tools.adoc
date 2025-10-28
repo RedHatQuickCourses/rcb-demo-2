@@ -1,0 +1,43 @@
+#  Utilizing OpenShift logging and monitoring tools
+
+## Utilizing OpenShift Logging and Monitoring Tools
+
+In Red Hat OpenShift Container Platform (RHOCP), logging and monitoring are crucial for maintaining the health and performance of your applications and the cluster itself. This section will guide you through the key logging and monitoring tools available in RHOCP, and how to utilize them effectively.
+
+### 1. Overview of Logging in OpenShift
+
+Logging in OpenShift is managed by Elasticsearch, Fluentd, and Kibana (EFK) stack. This powerful combination enables centralized logging, log aggregation, and visualization.
+
+#### a. Elasticsearch
+
+Elasticsearch is a distributed, RESTful search and analytics engine capable of addressing a growing number of use cases. In OpenShift, it stores and indexes container logs, making them searchable and analyzable.
+
+#### b. Fluentd
+
+Fluentd is an open-source data collector for unified logging layers. It's responsible for collecting, buffering, and forwarding log events from various sources, including OpenShift nodes and containers, to Elasticsearch.
+
+#### c. Kibana
+
+Kibana lets you visualize your logs and explore your data with a user-friendly interface. You can create dashboards, graphs, and maps to analyze and monitor your logs in real-time.
+
+### 2. Accessing and Using OpenShift Logging
+
+To access the logging interface, navigate to the "Logging" option in the OpenShift Web Console. Here, you can view, search, and filter logs from different components of your cluster.
+
+#### Hands-on Activity: Viewing Cluster Logs
+
+1. Log in to your OpenShift Web Console.
+2. Navigate to "Logging" from the left-hand menu.
+3. Select "Log Store" to view the overall log storage status.
+4. Click on "Logs" to view the container logs.
+5. Use the available filters and search options to find specific log entries.
+
+### 3. Monitoring in OpenShift
+
+OpenShift provides several monitoring tools to keep track of the cluster's health and performance. The primary monitoring tool is Prometheus, which collects metrics from monitored targets via a pull model.
+
+#### a. Prometheus
+
+Prometheus is an open-source systems monitoring and alerting toolkit. In OpenShift, it collects time-series data, enabling you to query, graph, and alert on various cluster and application metrics.
+
+#### b. Grafana
