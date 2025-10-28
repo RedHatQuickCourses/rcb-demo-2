@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Understanding Pods, Deployments, and Services :: Red Hat OpenShift (RHOCP)</title>
+    <link rel="prev" href="application-nodes.html">
+    <link rel="next" href="../troubleshooting-common-issues/troubleshooting-common-issues.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../../..">Red Hat OpenShift (RHOCP)</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/RedHatQuickCourses/REPLACEREPONAME/issues" target="_blank">Report Issues</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ecb-demo-2" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Red Hat OpenShift (RHOCP)</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../LABENV/index.html">Lab Environment</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="rhocp-architecture-and-components.html">RHOCP Architecture and Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="overview-of-rhocp.html">Overview of RHOCP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="key-components-of-rhocp.html">Key components of RHOCP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="master-node.html">Master Node</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="infrastructure-nodes.html">Infrastructure Nodes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="application-nodes.html">Application Nodes</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="understanding-pods-deployments-and-services.html">Understanding Pods, Deployments, and Services</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../troubleshooting-common-issues/troubleshooting-common-issues.html">Troubleshooting Common Issues</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../troubleshooting-common-issues/identifying-and-resolving-cluster-issues.html">Identifying and resolving cluster issues</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../troubleshooting-common-issues/debugging-application-failures.html">Debugging application failures</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../troubleshooting-common-issues/utilizing-openshift-logging-and-monitoring-tools.html">Utilizing OpenShift logging and monitoring tools</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../appendix/appendix.html">Appendix</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Red Hat OpenShift (RHOCP)</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Red Hat OpenShift (RHOCP)</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Red Hat OpenShift (RHOCP)</a></li>
+    <li><a href="rhocp-architecture-and-components.html">RHOCP Architecture and Components</a></li>
+    <li><a href="understanding-pods-deployments-and-services.html">Understanding Pods, Deployments, and Services</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Understanding Pods, Deployments, and Services</h1>
+<div class="sect1">
+<h2 id="_understanding_pods_deployments_and_services"><a class="anchor" href="#_understanding_pods_deployments_and_services"></a>Understanding Pods, Deployments, and Services</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In Red Hat OpenShift Container Platform (RHOCP), Pods, Deployments, and Services are fundamental concepts that facilitate the deployment, scaling, and networking of containerized applications. This section will provide detailed explanations of each concept, along with practical hands-on activities to solidify your understanding.</p>
+</div>
+<div class="sect2">
+<h3 id="_pods"><a class="anchor" href="#_pods"></a>Pods</h3>
+<div class="paragraph">
+<p>A Pod is the basic execution unit of an RHOCP application. It represents a single instance of a running process in your cluster and can contain one or more containers. Containers within a Pod share the same network namespace, allowing them to communicate with each other using localhost.</p>
+</div>
+<div class="paragraph">
+<p><strong>Hands-on Activity: Creating a Simple Pod</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log in to your RHOCP cluster using <code>oc login</code>.</p>
+</li>
+<li>
+<p>Create a new project: <code>oc new-project pod-demo</code>.</p>
+</li>
+<li>
+<p>Create a Pod definition file named <code>pod.yaml</code>:</p>
+<div class="literalblock">
+<div class="content">
+<pre>```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  containers:
+  - name: my-container
+    image: nginx:1.14.2
+    ports:
+    - containerPort: 80
+```</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Apply the Pod definition: <code>oc apply -f pod.yaml</code>.</p>
+</li>
+<li>
+<p>Verify the Pod status: <code>oc get pods</code>.</p>
+</li>
+<li>
+<p>Exec into the Pod: <code>oc exec -it my-pod&#8201;&#8212;&#8201;/bin/bash</code>.</p>
+</li>
+<li>
+<p>Exit the Pod: <code>exit</code>.</p>
+</li>
+<li>
+<p>Delete the Pod: <code>oc delete pod my-pod</code>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_deployments"><a class="anchor" href="#_deployments"></a>Deployments</h3>
+<div class="paragraph">
+<p>Deployments in RHOCP manage the lifecycle of your Pods and ensure the desired number of Pod replicas are running. They provide declarative updates for your applications, rolling updates, and rollbacks.</p>
+</div>
+<div class="paragraph">
+<p><strong>Hands-on Activity: Creating a Deployment</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In the same project (<code>pod-demo</code>), create a Deployment definition file named <code>deployment.yaml</code>:</p>
+<div class="literalblock">
+<div class="content">
+<pre>```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: my-container
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="application-nodes.html">Application Nodes</a></span>
+  <span class="next"><a href="../troubleshooting-common-issues/troubleshooting-common-issues.html">Troubleshooting Common Issues</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img src="../../../_/img/rhl-logo-red.png" height="40px" alt="Red Hat"  href="https://redhat.com" >
+</footer><script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

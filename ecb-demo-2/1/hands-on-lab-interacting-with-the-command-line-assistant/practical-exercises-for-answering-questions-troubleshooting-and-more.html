@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Practical exercises for answering questions, troubleshooting, and more :: Red Hat OpenShift (RHOCP)</title>
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../../..">Red Hat OpenShift (RHOCP)</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/RedHatQuickCourses/REPLACEREPONAME/issues" target="_blank">Report Issues</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ecb-demo-2" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Red Hat OpenShift (RHOCP)</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../LABENV/index.html">Lab Environment</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../rhocp-architecture-and-components/rhocp-architecture-and-components.html">RHOCP Architecture and Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../rhocp-architecture-and-components/overview-of-rhocp.html">Overview of RHOCP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../rhocp-architecture-and-components/key-components-of-rhocp.html">Key components of RHOCP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../rhocp-architecture-and-components/master-node.html">Master Node</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../rhocp-architecture-and-components/infrastructure-nodes.html">Infrastructure Nodes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../rhocp-architecture-and-components/application-nodes.html">Application Nodes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../rhocp-architecture-and-components/understanding-pods-deployments-and-services.html">Understanding Pods, Deployments, and Services</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../troubleshooting-common-issues/troubleshooting-common-issues.html">Troubleshooting Common Issues</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../troubleshooting-common-issues/identifying-and-resolving-cluster-issues.html">Identifying and resolving cluster issues</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../troubleshooting-common-issues/debugging-application-failures.html">Debugging application failures</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../troubleshooting-common-issues/utilizing-openshift-logging-and-monitoring-tools.html">Utilizing OpenShift logging and monitoring tools</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../appendix/appendix.html">Appendix</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Red Hat OpenShift (RHOCP)</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Red Hat OpenShift (RHOCP)</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Red Hat OpenShift (RHOCP)</a></li>
+    <li><a href="practical-exercises-for-answering-questions-troubleshooting-and-more.html">Practical exercises for answering questions, troubleshooting, and more</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Practical exercises for answering questions, troubleshooting, and more</h1>
+<div class="sect1">
+<h2 id="_hands_on_lab_interacting_with_the_command_line_assistant"><a class="anchor" href="#_hands_on_lab_interacting_with_the_command_line_assistant"></a>Hands-on Lab: Interacting with the Command-Line Assistant</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this hands-on lab, you will learn how to effectively interact with the command-line assistant powered by RHEL Lightspeed. This lab is designed to help you understand how to ask questions, troubleshoot issues, and leverage the assistant for various tasks.</p>
+</div>
+<div class="sect2">
+<h3 id="_setting_up_and_using_the_command_line_assistant"><a class="anchor" href="#_setting_up_and_using_the_command_line_assistant"></a>Setting up and using the command-line assistant</h3>
+<div class="paragraph">
+<p>Before you begin, ensure that the command-line assistant is installed and provisioned to your RHEL deployments as described in Chapters 2 and 3.</p>
+</div>
+<div class="paragraph">
+<p>To start using the command-line assistant, simply type <code>c</code> followed by your question in quotation marks. For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">$ c "What is the status of the sshd service?"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The assistant will process your request and provide a relevant response based on the information available.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_practical_exercises"><a class="anchor" href="#_practical_exercises"></a>Practical Exercises</h3>
+<div class="sect3">
+<h4 id="_exercise_1_answering_rhel_related_questions"><a class="anchor" href="#_exercise_1_answering_rhel_related_questions"></a>Exercise 1: Answering RHEL-related questions</h4>
+<div class="paragraph">
+<p>Ask the assistant various questions to get comfortable with its capabilities. Here are some examples:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>c "What is the default shell for the root user in RHEL?"</code></p>
+</li>
+<li>
+<p><code>c "How do I check the version of my RHEL installation?"</code></p>
+</li>
+<li>
+<p><code>c "What is the purpose of the yum command in RHEL?"</code></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_exercise_2_troubleshooting_issues"><a class="anchor" href="#_exercise_2_troubleshooting_issues"></a>Exercise 2: Troubleshooting issues</h4>
+<div class="paragraph">
+<p>Use the command-line assistant to troubleshoot common RHEL issues. Refer to Chapter 5 for examples and syntax.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Troubleshooting SSHD service failing to start</strong></p>
+<div class="literalblock">
+<div class="content">
+<pre>Use the `-w 1` option to include the output from the last command that was run. For example:</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>```
+$ c -w 1 "help me understand the error when failing to start sshd service"
+```</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Then, run the suggested `journalctl -xeu sshd.service` command and pipe the output to the assistant for further analysis.</pre>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Troubleshooting SELinux issues</strong></p>
+<div class="literalblock">
+<div class="content">
+<pre>Ask the assistant for guidance on resolving SELinux-related problems. For example:</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>```
+$ c "I am experiencing issues with SELinux. Can you provide a list of things to troubleshoot?"
+```</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_exercise_3_leveraging_additional_features"><a class="anchor" href="#_exercise_3_leveraging_additional_features"></a>Exercise 3: Leveraging additional features</h4>
+<div class="paragraph">
+<p>Explore other functionalities offered by the command-line assistant, such as attaching files, checking history, redirecting command output, and submitting feedback</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img src="../../../_/img/rhl-logo-red.png" height="40px" alt="Red Hat"  href="https://redhat.com" >
+</footer><script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

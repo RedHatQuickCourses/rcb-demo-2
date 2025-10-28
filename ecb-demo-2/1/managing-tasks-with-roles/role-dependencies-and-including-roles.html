@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Role Dependencies and Including Roles :: Red Hat OpenShift (RHOCP)</title>
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../../..">Red Hat OpenShift (RHOCP)</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/RedHatQuickCourses/REPLACEREPONAME/issues" target="_blank">Report Issues</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ecb-demo-2" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Red Hat OpenShift (RHOCP)</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../LABENV/index.html">Lab Environment</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../rhocp-architecture-and-components/rhocp-architecture-and-components.html">RHOCP Architecture and Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../rhocp-architecture-and-components/overview-of-rhocp.html">Overview of RHOCP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../rhocp-architecture-and-components/key-components-of-rhocp.html">Key components of RHOCP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../rhocp-architecture-and-components/master-node.html">Master Node</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../rhocp-architecture-and-components/infrastructure-nodes.html">Infrastructure Nodes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../rhocp-architecture-and-components/application-nodes.html">Application Nodes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../rhocp-architecture-and-components/understanding-pods-deployments-and-services.html">Understanding Pods, Deployments, and Services</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../troubleshooting-common-issues/troubleshooting-common-issues.html">Troubleshooting Common Issues</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../troubleshooting-common-issues/identifying-and-resolving-cluster-issues.html">Identifying and resolving cluster issues</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../troubleshooting-common-issues/debugging-application-failures.html">Debugging application failures</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../troubleshooting-common-issues/utilizing-openshift-logging-and-monitoring-tools.html">Utilizing OpenShift logging and monitoring tools</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../appendix/appendix.html">Appendix</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Red Hat OpenShift (RHOCP)</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Red Hat OpenShift (RHOCP)</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Red Hat OpenShift (RHOCP)</a></li>
+    <li><a href="role-dependencies-and-including-roles.html">Role Dependencies and Including Roles</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Role Dependencies and Including Roles</h1>
+<div class="sect1">
+<h2 id="_role_dependencies_and_including_roles"><a class="anchor" href="#_role_dependencies_and_including_roles"></a>Role Dependencies and Including Roles</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In Ansible, roles are a way to partition playbook content into manageable, reusable pieces. They promote the DRY (Don&#8217;t Repeat Yourself) principle by allowing you to define a role once and then include it in multiple playbooks. This section will cover role dependencies and including roles.</p>
+</div>
+<div class="sect2">
+<h3 id="_understanding_role_dependencies"><a class="anchor" href="#_understanding_role_dependencies"></a>Understanding Role Dependencies</h3>
+<div class="paragraph">
+<p>Role dependencies allow you to specify that one role should be executed before another. This is particularly useful when roles depend on specific tasks or services provided by other roles.</p>
+</div>
+<div class="paragraph">
+<p>Ansible uses the <code>meta/main.yml</code> file within a role to define dependencies. The <code>dependencies</code> key is used to list the names of the roles that the current role depends on.</p>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s an example of how to define role dependencies:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">---
+- name: Setup Apache
+  hosts: all
+  roles:
+    - common
+    - apache_setup
+
+- name: Install Database
+  hosts: db_servers
+  roles:
+    - common
+    - database_setup</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this example, <code>apache_setup</code> role depends on the <code>common</code> role, and <code>database_setup</code> role depends on both the <code>common</code> and <code>apache_setup</code> roles.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_including_roles"><a class="anchor" href="#_including_roles"></a>Including Roles</h3>
+<div class="paragraph">
+<p>To include a role in a playbook, you use the <code>roles</code> key under the play definition. You can either list the role names directly or reference them using a variable.</p>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s an example of including roles in a playbook:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">---
+- name: Playbook demonstrating role inclusion
+  hosts: all
+  vars:
+    primary_role: common
+    secondary_role: apache_setup
+
+  roles:
+    - {{ primary_role }}
+    - {{ secondary_role }}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this example, the <code>common</code> and <code>apache_setup</code> roles are included in the playbook.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_hands_on_activity_role_dependencies_and_including_roles"><a class="anchor" href="#_hands_on_activity_role_dependencies_and_including_roles"></a>Hands-on Activity: Role Dependencies and Including Roles</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Create Roles</strong>: Create two roles, <code>common</code> and <code>apache_setup</code>. The <code>common</code> role should contain tasks for setting up common configurations, while the <code>apache_setup</code> role should contain tasks for setting up an Apache web server. Make sure to define role dependencies in the <code>meta/main.yml</code> file of each role.</p>
+</li>
+<li>
+<p><strong>Playbook with Role Inclusion</strong>: Write a playbook that includes both roles. Ensure that the `apache_setup</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img src="../../../_/img/rhl-logo-red.png" height="40px" alt="Red Hat"  href="https://redhat.com" >
+</footer><script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

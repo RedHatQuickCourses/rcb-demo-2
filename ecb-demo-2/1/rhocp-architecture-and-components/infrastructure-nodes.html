@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Infrastructure Nodes :: Red Hat OpenShift (RHOCP)</title>
+    <link rel="prev" href="master-node.html">
+    <link rel="next" href="application-nodes.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../../..">Red Hat OpenShift (RHOCP)</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/RedHatQuickCourses/REPLACEREPONAME/issues" target="_blank">Report Issues</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ecb-demo-2" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Red Hat OpenShift (RHOCP)</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../LABENV/index.html">Lab Environment</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="rhocp-architecture-and-components.html">RHOCP Architecture and Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="overview-of-rhocp.html">Overview of RHOCP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="key-components-of-rhocp.html">Key components of RHOCP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="master-node.html">Master Node</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="infrastructure-nodes.html">Infrastructure Nodes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="application-nodes.html">Application Nodes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="understanding-pods-deployments-and-services.html">Understanding Pods, Deployments, and Services</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../troubleshooting-common-issues/troubleshooting-common-issues.html">Troubleshooting Common Issues</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../troubleshooting-common-issues/identifying-and-resolving-cluster-issues.html">Identifying and resolving cluster issues</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../troubleshooting-common-issues/debugging-application-failures.html">Debugging application failures</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../troubleshooting-common-issues/utilizing-openshift-logging-and-monitoring-tools.html">Utilizing OpenShift logging and monitoring tools</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../appendix/appendix.html">Appendix</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Red Hat OpenShift (RHOCP)</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Red Hat OpenShift (RHOCP)</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Red Hat OpenShift (RHOCP)</a></li>
+    <li><a href="rhocp-architecture-and-components.html">RHOCP Architecture and Components</a></li>
+    <li><a href="infrastructure-nodes.html">Infrastructure Nodes</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Infrastructure Nodes</h1>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">## Infrastructure Nodes in Red Hat OpenShift (RHOCP)
+
+Infrastructure nodes in Red Hat OpenShift (RHOCP) are a specialized type of node designed to host optional components that provide services for cluster operation and additional functionality. These nodes are not part of the default OpenShift installation but can be added to enhance the cluster's capabilities.
+
+### Overview
+
+Infrastructure nodes are typically used to run workloads that are not application-driven but are essential for the smooth functioning of the cluster. Examples include monitoring tools, logging aggregators, and registry servers. By offloading these services to dedicated nodes, you can prevent them from consuming resources needed by application nodes, ensuring optimal performance for your applications.
+
+### Key Components on Infrastructure Nodes
+
+1. **Monitoring Stack**: Components like Prometheus and the Monitoring Operator are often deployed on infrastructure nodes to collect and store cluster metrics. This data is crucial for understanding the health and performance of your OpenShift cluster.
+
+2. **Logging Stack**: Tools such as Elasticsearch, Kibana, and Fluentd are frequently installed on infrastructure nodes to aggregate and visualize logs from all pods in the cluster. This setup simplifies troubleshooting and provides insights into system behavior.
+
+3. **Registry Server**: An internal container registry, typically based on Red Hat Quay or Docker Registry, can be deployed on infrastructure nodes. This registry stores container images pulled from external registries, reducing the need to download images repeatedly and speeding up deployment times.
+
+### Configuring Infrastructure Nodes
+
+To add infrastructure nodes to your OpenShift cluster, follow these steps:
+
+1. **Label Nodes**: Identify the nodes you want to designate as infrastructure nodes and label them using `oc label`. For example:
+
+   ```bash
+   oc label node &lt;node-name&gt; node-role.kubernetes.io/infra=
+   ```
+
+2. **Taint Master Nodes**: Ensure that master nodes are tainted with the `node-role.kubernetes.io/infra:NoSchedule` taint to prevent scheduling of general workloads on these nodes.
+
+3. **Deploy Cluster Operators**: Use the OpenShift web console or `oc apply` commands to deploy the required operators and components (e.g., Prometheus, Logging, Quay) on the newly labeled nodes.
+
+### Hands-on Activity: Setting Up an Infrastructure Node
+
+**Objective**: Deploy a logging stack on an infrastructure node in your OpenShift cluster.</code></pre>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="master-node.html">Master Node</a></span>
+  <span class="next"><a href="application-nodes.html">Application Nodes</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img src="../../../_/img/rhl-logo-red.png" height="40px" alt="Red Hat"  href="https://redhat.com" >
+</footer><script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

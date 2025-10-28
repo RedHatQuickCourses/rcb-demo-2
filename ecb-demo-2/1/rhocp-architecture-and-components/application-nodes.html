@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Application Nodes :: Red Hat OpenShift (RHOCP)</title>
+    <link rel="prev" href="infrastructure-nodes.html">
+    <link rel="next" href="understanding-pods-deployments-and-services.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../../..">Red Hat OpenShift (RHOCP)</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/RedHatQuickCourses/REPLACEREPONAME/issues" target="_blank">Report Issues</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ecb-demo-2" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Red Hat OpenShift (RHOCP)</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../LABENV/index.html">Lab Environment</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="rhocp-architecture-and-components.html">RHOCP Architecture and Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="overview-of-rhocp.html">Overview of RHOCP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="key-components-of-rhocp.html">Key components of RHOCP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="master-node.html">Master Node</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="infrastructure-nodes.html">Infrastructure Nodes</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="application-nodes.html">Application Nodes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="understanding-pods-deployments-and-services.html">Understanding Pods, Deployments, and Services</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../troubleshooting-common-issues/troubleshooting-common-issues.html">Troubleshooting Common Issues</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../troubleshooting-common-issues/identifying-and-resolving-cluster-issues.html">Identifying and resolving cluster issues</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../troubleshooting-common-issues/debugging-application-failures.html">Debugging application failures</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../troubleshooting-common-issues/utilizing-openshift-logging-and-monitoring-tools.html">Utilizing OpenShift logging and monitoring tools</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../appendix/appendix.html">Appendix</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Red Hat OpenShift (RHOCP)</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Red Hat OpenShift (RHOCP)</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Red Hat OpenShift (RHOCP)</a></li>
+    <li><a href="rhocp-architecture-and-components.html">RHOCP Architecture and Components</a></li>
+    <li><a href="application-nodes.html">Application Nodes</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Application Nodes</h1>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">== Application Nodes
+
+Application Nodes, also known as worker nodes, are the core components of Red Hat OpenShift (RHOCP) where applications and their containers run. They are responsible for executing the tasks assigned by the control plane (Master Node) and providing the necessary computing resources for the applications.
+
+### Overview
+
+Application Nodes are virtual or physical machines that host the application containers. They are managed by the control plane and automatically receive and execute containerized applications based on the defined Deployments and Pods.
+
+### Key Features
+
+1. **Container Execution**: Application Nodes pull container images from the registry specified in the Deployment configuration and execute them as Pods.
+2. **Resource Management**: Nodes manage their resources (CPU, memory, storage) and report their status back to the control plane. The control plane then decides which Nodes are best suited to run a particular Pod based on resource availability and other constraints.
+3. **Node Health Checks**: RHOCP constantly monitors the health of the Application Nodes. If a Node becomes unresponsive or unhealthy, the control plane removes its Pods and creates new ones on other available Nodes.
+4. **Scalability**: You can easily scale your application horizontally by adding or removing Application Nodes. RHOCP automatically redistributes the Pods across the available Nodes.
+
+### Hands-on Activity: Deploying an Application on an Application Node
+
+To understand how Application Nodes function, let's deploy a simple application.
+
+1. **Create a Project**:
+   Use the following command to create a new project named 'my-project':
+
+   ```
+   oc new-project my-project
+   ```
+
+2. **Deploy an Application**:
+   Create a Deployment configuration for a simple Nginx application using the following YAML:
+
+   ```yaml
+   apiVersion: apps/v1
+   kind: Deployment
+   metadata:
+     name: nginx-deployment
+   spec:
+     selector:
+       matchLabels:
+         app: nginx
+     replicas: 3
+     template:
+       metadata:
+         labels:
+           app: nginx
+       spec:
+         containers:
+         - name: nginx
+           image: nginx:1.14.2
+           ports:
+           - containerPort: 80
+   ```
+
+   Apply the configuration with:
+
+   ```
+   oc apply -f nginx-deployment.yaml
+   ```
+
+3. **Check Pods**:
+   Verify that the Pods are running on the Application Nodes:
+
+   ```
+   oc get pods -o</code></pre>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="infrastructure-nodes.html">Infrastructure Nodes</a></span>
+  <span class="next"><a href="understanding-pods-deployments-and-services.html">Understanding Pods, Deployments, and Services</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img src="../../../_/img/rhl-logo-red.png" height="40px" alt="Red Hat"  href="https://redhat.com" >
+</footer><script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
