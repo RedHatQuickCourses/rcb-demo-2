@@ -1,12 +1,12 @@
-name: ecb-demo-2
-title:  Red Hat OpenShift (RHOCP)
+name: rcb-demo-2
+title:   Basics of RHEL Lightspeed
 version: 1
 nav:
 - modules/ROOT/nav.adoc
 - modules/LABENV/nav.adoc
 
-- modules/rhocp-architecture-and-components/nav.adoc
+- modules/introduction-to-rhel-lightspeed/nav.adoc
 
-- modules/troubleshooting-common-issues/nav.adoc
+- modules/hands-on-lab-interacting-with-the-command-line-assistant/nav.adoc
 
 - modules/appendix/nav.adoc

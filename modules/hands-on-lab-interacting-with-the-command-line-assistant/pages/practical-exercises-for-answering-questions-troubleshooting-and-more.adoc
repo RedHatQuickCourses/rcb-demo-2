@@ -2,52 +2,56 @@
 
 == Hands-on Lab: Interacting with the Command-Line Assistant
 
-In this hands-on lab, you will learn how to effectively interact with the command-line assistant powered by RHEL Lightspeed. This lab is designed to help you understand how to ask questions, troubleshoot issues, and leverage the assistant for various tasks.
+In this hands-on lab, you will learn how to effectively interact with the command-line assistant powered by RHEL Lightspeed. This lab is designed to help you understand how to ask questions, troubleshoot issues, and utilize the assistant for various tasks.
 
-### Setting up and using the command-line assistant
+### 1. Setting up the Command-Line Assistant
 
-Before you begin, ensure that the command-line assistant is installed and provisioned to your RHEL deployments as described in Chapters 2 and 3.
+Before you begin, ensure that the command-line assistant is installed and provisioned to your RHEL deployment. Refer to Chapter 2 and Chapter 3 in the context for detailed instructions on installation and provisioning.
 
-To start using the command-line assistant, simply type `c` followed by your question in quotation marks. For example:
+### 2. Asking Questions to the Command-Line Assistant
+
+To ask a question to the command-line assistant, use the following syntax:
 
 ```
-$ c "What is the status of the sshd service?"
+c "your-question"
 ```
 
-The assistant will process your request and provide a relevant response based on the information available.
+For example, to learn about troubleshooting network errors, you would type:
 
-### Practical Exercises
+```
+$ c "how to troubleshoot network errors"
+```
 
-#### Exercise 1: Answering RHEL-related questions
+### 3. Practical Exercises
 
-Ask the assistant various questions to get comfortable with its capabilities. Here are some examples:
+#### Exercise 1: Troubleshooting SSHD Service Failure
 
-1. `c "What is the default shell for the root user in RHEL?"`
-2. `c "How do I check the version of my RHEL installation?"`
-3. `c "What is the purpose of the yum command in RHEL?"`
+The SSHD service is crucial for remote access to your RHEL system. If it fails to start, it can disrupt your remote management capabilities. Use the command-line assistant to troubleshoot this issue.
 
-#### Exercise 2: Troubleshooting issues
-
-Use the command-line assistant to troubleshoot common RHEL issues. Refer to Chapter 5 for examples and syntax.
-
-1. **Troubleshooting SSHD service failing to start**
-
-   Use the `-w 1` option to include the output from the last command that was run. For example:
+1. Type the following command to initiate the troubleshooting process:
 
    ```
-   $ c -w 1 "help me understand the error when failing to start sshd service"
+   $ c -w 1 "what_is_this"
    ```
 
-   Then, run the suggested `journalctl -xeu sshd.service` command and pipe the output to the assistant for further analysis.
+   The `-w 1` option includes the output from the last command that was run, which can be helpful in diagnosing the problem.
 
-2. **Troubleshooting SELinux issues**
+2. Based on the response, run the `journalctl -xeu sshd` command to check the log files for the SSHD service.
 
-   Ask the assistant for guidance on resolving SELinux-related problems. For example:
+3. Pipe the output into the command-line assistant and add a query to understand the error. For instance:
 
    ```
-   $ c "I am experiencing issues with SELinux. Can you provide a list of things to troubleshoot?"
+   $ journalctl -xeu sshd | c "help me understand the output"
    ```
 
-#### Exercise 3: Leveraging additional features
+#### Exercise 2: Identifying Modified Files in /etc
 
-Explore other functionalities offered by the command-line assistant, such as attaching files, checking history, redirecting command output, and submitting feedback
+Suppose you need to identify files in the `/etc` directory that have been modified in the last hour. Use the command-line assistant to find this information.
+
+1. Execute the following command to list the modified files:
+
+   ```
+   $ find /etc -type f -mtime -1
+   ```
+
+2. Pipe the output into the command-line assistant and ask for
