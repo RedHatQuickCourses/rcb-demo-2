@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Section 1 :: Basics of RHEL Lightspeed</title>
+    <title>Debugging application failures :: Basics of RHEL Lightspeed</title>
     <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
@@ -117,7 +117,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Basics of RHEL Lightspeed</a></li>
-    <li><a href="section1.html">Section 1</a></li>
+    <li><a href="debugging-application-failures.html">Debugging application failures</a></li>
   </ul>
 </nav>
 </div>
@@ -126,22 +126,129 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Section 1</h1>
-<div class="ulist">
-<ul>
+<h1 class="page">Debugging application failures</h1>
+<div class="sect1">
+<h2 id="_debugging_application_failures_in_red_hat_openshift_rhocp"><a class="anchor" href="#_debugging_application_failures_in_red_hat_openshift_rhocp"></a>Debugging Application Failures in Red Hat OpenShift (RHOCP)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Debugging application failures in Red Hat OpenShift (RHOCP) requires a systematic approach, leveraging the platform&#8217;s built-in tools and understanding its architecture. This section will guide you through identifying and resolving common application failures in RHOCP.</p>
+</div>
+<div class="sect2">
+<h3 id="_understanding_application_failure_scenarios"><a class="anchor" href="#_understanding_application_failure_scenarios"></a>Understanding Application Failure Scenarios</h3>
+<div class="paragraph">
+<p>Application failures in RHOCP can stem from various sources, including misconfigurations, resource constraints, or underlying infrastructure issues. To effectively debug these failures, it&#8217;s crucial to understand the RHOCP architecture and its key components: Master Node, Infrastructure Nodes, and Application Nodes.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_by_step_debugging_process"><a class="anchor" href="#_step_by_step_debugging_process"></a>Step-by-Step Debugging Process</h3>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p>Create multiple copies of this section as needed.</p>
+<p><strong>Check the Application Logs</strong></p>
+<div class="literalblock">
+<div class="content">
+<pre>The first step in debugging application failures is to examine the application logs. In RHOCP, you can access application logs using the `oc logs` command. For instance, to view logs for a pod named `my-app`, execute:</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>```
+oc logs my-app-&lt;random-string&gt;
+```</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Replace `&lt;random-string&gt;` with the actual random string assigned to your pod.</pre>
+</div>
+</div>
 </li>
 <li>
-<p>Remove any unnecessary sections or chapter pages.</p>
+<p><strong>Inspect Pod Status</strong></p>
+<div class="literalblock">
+<div class="content">
+<pre>Use the `oc status` command to check the overall health of your pods. This command provides a high-level overview of your application's status, including running, pending, and failed pods.</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>```
+oc status
+```</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>To get detailed information about a specific pod, use:</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>```
+oc describe pod &lt;pod-name&gt;
+```</pre>
+</div>
+</div>
 </li>
 <li>
-<p>Customize the section as appropriate.</p>
+<p><strong>Analyze Events</strong></p>
+<div class="literalblock">
+<div class="content">
+<pre>RHOCP generates events for various occurrences, such as pod scheduling, termination, and errors. To view events related to a specific resource, use:</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>```
+oc get events
+```</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Or, for events related to a particular namespace:</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>```
+oc get events -n &lt;namespace&gt;
+```</pre>
+</div>
+</div>
 </li>
 <li>
-<p>Ensure that each page contains a manageable amount of content.</p>
+<p><strong>Check Resource Limits and Quotas</strong></p>
+<div class="literalblock">
+<div class="content">
+<pre>Application failures can also be caused by insufficient resources. Verify if your application pods are consuming more resources than allocated. You can check resource usage and limits with:</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>```
+oc describe pod &lt;pod-name&gt;
+```</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>In the output, look for `Limits` and `Requests` under `Containers`.</pre>
+</div>
+</div>
 </li>
-</ul>
+<li>
+<p><strong>Investigate Network Issues</strong></p>
+<div class="literalblock">
+<div class="content">
+<pre>Network-related problems can lead to application failures. Use the `oc adm top node` command to inspect node network statistics. Additionally, check service and route configurations</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
 </div>
 </article>
   </div>

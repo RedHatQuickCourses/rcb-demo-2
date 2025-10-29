@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Section 1 :: Basics of RHEL Lightspeed</title>
+    <title>Utilizing OpenShift logging and monitoring tools :: Basics of RHEL Lightspeed</title>
     <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
@@ -117,7 +117,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Basics of RHEL Lightspeed</a></li>
-    <li><a href="section1.html">Section 1</a></li>
+    <li><a href="utilizing-openshift-logging-and-monitoring-tools.html">Utilizing OpenShift logging and monitoring tools</a></li>
   </ul>
 </nav>
 </div>
@@ -126,22 +126,82 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Section 1</h1>
-<div class="ulist">
-<ul>
+<h1 class="page">Utilizing OpenShift logging and monitoring tools</h1>
+<div class="sect1">
+<h2 id="_utilizing_openshift_logging_and_monitoring_tools"><a class="anchor" href="#_utilizing_openshift_logging_and_monitoring_tools"></a>Utilizing OpenShift Logging and Monitoring Tools</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In Red Hat OpenShift Container Platform (RHOCP), logging and monitoring are crucial for maintaining the health and performance of your applications and the cluster itself. This section will guide you through the key logging and monitoring tools available in RHOCP, and how to utilize them effectively.</p>
+</div>
+<div class="sect2">
+<h3 id="_1_overview_of_logging_in_openshift"><a class="anchor" href="#_1_overview_of_logging_in_openshift"></a>1. Overview of Logging in OpenShift</h3>
+<div class="paragraph">
+<p>Logging in OpenShift is managed by Elasticsearch, Fluentd, and Kibana (EFK) stack. This powerful combination enables centralized logging, log aggregation, and visualization.</p>
+</div>
+<div class="sect3">
+<h4 id="_a_elasticsearch"><a class="anchor" href="#_a_elasticsearch"></a>a. Elasticsearch</h4>
+<div class="paragraph">
+<p>Elasticsearch is a distributed, RESTful search and analytics engine capable of addressing a growing number of use cases. In OpenShift, it stores and indexes container logs, making them searchable and analyzable.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_b_fluentd"><a class="anchor" href="#_b_fluentd"></a>b. Fluentd</h4>
+<div class="paragraph">
+<p>Fluentd is an open-source data collector for unified logging layers. It&#8217;s responsible for collecting, buffering, and forwarding log events from various sources, including OpenShift nodes and containers, to Elasticsearch.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_kibana"><a class="anchor" href="#_c_kibana"></a>c. Kibana</h4>
+<div class="paragraph">
+<p>Kibana lets you visualize your logs and explore your data with a user-friendly interface. You can create dashboards, graphs, and maps to analyze and monitor your logs in real-time.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_2_accessing_and_using_openshift_logging"><a class="anchor" href="#_2_accessing_and_using_openshift_logging"></a>2. Accessing and Using OpenShift Logging</h3>
+<div class="paragraph">
+<p>To access the logging interface, navigate to the "Logging" option in the OpenShift Web Console. Here, you can view, search, and filter logs from different components of your cluster.</p>
+</div>
+<div class="sect3">
+<h4 id="_hands_on_activity_viewing_cluster_logs"><a class="anchor" href="#_hands_on_activity_viewing_cluster_logs"></a>Hands-on Activity: Viewing Cluster Logs</h4>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p>Create multiple copies of this section as needed.</p>
+<p>Log in to your OpenShift Web Console.</p>
 </li>
 <li>
-<p>Remove any unnecessary sections or chapter pages.</p>
+<p>Navigate to "Logging" from the left-hand menu.</p>
 </li>
 <li>
-<p>Customize the section as appropriate.</p>
+<p>Select "Log Store" to view the overall log storage status.</p>
 </li>
 <li>
-<p>Ensure that each page contains a manageable amount of content.</p>
+<p>Click on "Logs" to view the container logs.</p>
 </li>
-</ul>
+<li>
+<p>Use the available filters and search options to find specific log entries.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_3_monitoring_in_openshift"><a class="anchor" href="#_3_monitoring_in_openshift"></a>3. Monitoring in OpenShift</h3>
+<div class="paragraph">
+<p>OpenShift provides several monitoring tools to keep track of the cluster&#8217;s health and performance. The primary monitoring tool is Prometheus, which collects metrics from monitored targets via a pull model.</p>
+</div>
+<div class="sect3">
+<h4 id="_a_prometheus"><a class="anchor" href="#_a_prometheus"></a>a. Prometheus</h4>
+<div class="paragraph">
+<p>Prometheus is an open-source systems monitoring and alerting toolkit. In OpenShift, it collects time-series data, enabling you to query, graph, and alert on various cluster and application metrics.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_b_grafana"><a class="anchor" href="#_b_grafana"></a>b. Grafana</h4>
+
+</div>
+</div>
+</div>
 </div>
 </article>
   </div>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Section 1 :: Basics of RHEL Lightspeed</title>
+    <title>Master Node :: Basics of RHEL Lightspeed</title>
     <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
@@ -117,7 +117,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Basics of RHEL Lightspeed</a></li>
-    <li><a href="section1.html">Section 1</a></li>
+    <li><a href="master-node.html">Master Node</a></li>
   </ul>
 </nav>
 </div>
@@ -126,22 +126,42 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Section 1</h1>
-<div class="ulist">
-<ul>
-<li>
-<p>Create multiple copies of this section as needed.</p>
-</li>
-<li>
-<p>Remove any unnecessary sections or chapter pages.</p>
-</li>
-<li>
-<p>Customize the section as appropriate.</p>
-</li>
-<li>
-<p>Ensure that each page contains a manageable amount of content.</p>
-</li>
-</ul>
+<h1 class="page">Master Node</h1>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">== Master Node
+
+The Master Node is a critical component of a Red Hat OpenShift Container Platform (RHOCP) cluster. It is responsible for managing the cluster and making global decisions about the cluster. The Master Node runs several critical services that are essential for the functioning of the OpenShift cluster. Here, we will delve into the key services that run on the Master Node:
+
+1. **API Server**: This is the front-end for the OpenShift control plane. It's the primary way for administrators to interact with the cluster by exposing the OpenShift API. The API server is the central management hub that handles REST commands sent by the `oc` CLI tool, Kubernetes APIs, and other components.
+
+2. **Controller Manager**: This service maintains the desired state of the cluster. It includes several controller loops that regulate the state of the cluster. For instance, the node controller ensures that nodes are available and healthy, while the replication controller manages the number of pod replicas in a deployment.
+
+3. **etcd**: This is the key-value store for OpenShift where all cluster data are stored persistently. It's used for sharing information across the entire cluster. etcd is critical for the consistency and availability of OpenShift services.
+
+4. **Scheduler**: The scheduler is responsible for placing pods onto nodes. It follows user-defined placement guidelines, resource availability, and other constraints to make these placements.
+
+5. **Service Catalog**: This service provides a standardized API to access brokered services from different providers. It allows developers to easily provision and manage instances of services for their applications.
+
+**Hands-on Activity: Verifying Master Node Services**
+
+To understand the Master Node better, let's perform a quick check to verify that these services are running correctly.
+
+1. Gain access to a Master Node via SSH.
+2. Use the following command to check the status of the API server:
+   ```
+   curl -k https://api.your-openshift-cluster.com
+   ```
+   You should receive an XML response indicating the OpenShift version and other cluster details.
+
+3. To verify the Controller Manager, etcd, and Scheduler, check the status of the relevant pods using:
+   ```
+   oc get pods -n openshift-apiserver
+   oc get pods -n openshift-etcd
+   oc get pods -n openshift-kube-controller-manager
+   ```
+   Ensure that all these pods</code></pre>
+</div>
 </div>
 </article>
   </div>

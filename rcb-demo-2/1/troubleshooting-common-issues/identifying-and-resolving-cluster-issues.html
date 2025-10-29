@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Section 1 :: Basics of RHEL Lightspeed</title>
+    <title>Identifying and resolving cluster issues :: Basics of RHEL Lightspeed</title>
     <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
@@ -117,7 +117,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Basics of RHEL Lightspeed</a></li>
-    <li><a href="section1.html">Section 1</a></li>
+    <li><a href="identifying-and-resolving-cluster-issues.html">Identifying and resolving cluster issues</a></li>
   </ul>
 </nav>
 </div>
@@ -126,22 +126,113 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Section 1</h1>
+<h1 class="page">Identifying and resolving cluster issues</h1>
+<div class="sect1">
+<h2 id="_identifying_and_resolving_cluster_issues"><a class="anchor" href="#_identifying_and_resolving_cluster_issues"></a>Identifying and Resolving Cluster Issues</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_overview"><a class="anchor" href="#_overview"></a>Overview</h3>
+<div class="paragraph">
+<p>Red Hat OpenShift Container Platform (RHOCP) clusters, while robust, can encounter issues due to various reasons. As a cluster administrator, it&#8217;s crucial to identify and resolve these problems efficiently to maintain a healthy and productive environment. This section will guide you through common cluster issues, their identification, and resolution methods.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_key_components_involved_in_troubleshooting"><a class="anchor" href="#_key_components_involved_in_troubleshooting"></a>Key Components Involved in Troubleshooting</h3>
+<div class="paragraph">
+<p>Before diving into specific issues, let&#8217;s briefly review the key components of RHOCP that play a significant role in troubleshooting:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>Create multiple copies of this section as needed.</p>
+<p><strong>Master Node</strong>: The master node manages the cluster and its components, including the API server, controller manager, and etcd.</p>
 </li>
 <li>
-<p>Remove any unnecessary sections or chapter pages.</p>
+<p><strong>Infrastructure Nodes</strong>: These nodes host infrastructure components like the registry, router, and monitoring services.</p>
 </li>
 <li>
-<p>Customize the section as appropriate.</p>
-</li>
-<li>
-<p>Ensure that each page contains a manageable amount of content.</p>
+<p><strong>Application Nodes</strong>: Application nodes run user-deployed applications in containers.</p>
 </li>
 </ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_identifying_cluster_issues"><a class="anchor" href="#_identifying_cluster_issues"></a>Identifying Cluster Issues</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Monitoring Cluster Health</strong></p>
+<div class="literalblock">
+<div class="content">
+<pre>Use the OpenShift web console or command-line tools like `oc` or `kubectl` to monitor the overall health of your cluster. Check the status of nodes, pods, and services.</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>```bash
+oc get nodes
+oc get pods --all-namespaces
+oc get services --all-namespaces
+```</pre>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Reviewing Cluster Events</strong></p>
+<div class="literalblock">
+<div class="content">
+<pre>Cluster events provide valuable insights into what's happening within the cluster. Use the following command to view recent events:</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>```bash
+oc get events --all-namespaces
+```</pre>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Checking Logs</strong></p>
+<div class="literalblock">
+<div class="content">
+<pre>Logs from various cluster components can help pinpoint issues. For example, to check logs from the OpenShift API server:</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>```bash
+oc logs -n openshift-apiserver api-server-&lt;hash&gt;
+```</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_resolving_common_cluster_issues"><a class="anchor" href="#_resolving_common_cluster_issues"></a>Resolving Common Cluster Issues</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Node Issues</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Unhealthy Nodes</strong>: If a node is marked as 'NotReady' or 'Unready', investigate its status using <code>oc describe node &lt;node_name&gt;</code>. Common causes include network issues, disk space exhaustion, or resource contention. Address the underlying problem and, if necessary, drain and cordon the node before rebooting.</p>
+</li>
+<li>
+<p><strong>Nodes Not Joining the Cluster</strong>: Verify that the node&#8217;s configuration matches the master&#8217;s, including network settings, Docker version, and kubelet configuration. Ensure that the node&#8217;s firewall allows the necessary ports for communication with the master.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>**Pod and Deployment Fail</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
 </div>
 </article>
   </div>

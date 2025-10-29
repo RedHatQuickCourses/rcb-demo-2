@@ -71,28 +71,6 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../the-command-line-assistant-powered-by-rhel-lightspeed/the-command-line-assistant-powered-by-rhel-lightspeed.html">The Command-Line Assistant Powered by RHEL Lightspeed</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../the-command-line-assistant-powered-by-rhel-lightspeed/description-and-purpose-of-the-command-line-assistant.html">Description and purpose of the command-line assistant</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../the-command-line-assistant-powered-by-rhel-lightspeed/activities-supported-by-the-assistant.html">Activities supported by the assistant:</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../the-command-line-assistant-powered-by-rhel-lightspeed/answering-rhel-related-questions.html">Answering RHEL related questions</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../the-command-line-assistant-powered-by-rhel-lightspeed/troubleshooting-and-fixing-issues.html">Troubleshooting and fixing issues</a>
-  </li>
-</ul>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="0">
-<ul class="nav-list">
-  <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="hands-on-lab-interacting-with-the-command-line-assistant.html">Hands-on Lab: Interacting with the Command-Line Assistant</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
@@ -156,84 +134,66 @@
 <h2 id="_hands_on_lab_interacting_with_the_command_line_assistant"><a class="anchor" href="#_hands_on_lab_interacting_with_the_command_line_assistant"></a>Hands-on Lab: Interacting with the Command-Line Assistant</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In this hands-on lab, you will learn how to effectively interact with the command-line assistant powered by RHEL Lightspeed. This lab is designed to help you understand how to ask questions, troubleshoot issues, and leverage the assistant for various tasks.</p>
+<p>In this hands-on lab, you will learn how to effectively interact with the command-line assistant powered by RHEL Lightspeed. This lab is designed to help you understand how to ask questions, troubleshoot issues, and utilize the assistant for various tasks.</p>
 </div>
 <div class="sect2">
-<h3 id="_setting_up_and_using_the_command_line_assistant"><a class="anchor" href="#_setting_up_and_using_the_command_line_assistant"></a>Setting up and using the command-line assistant</h3>
+<h3 id="_1_setting_up_the_command_line_assistant"><a class="anchor" href="#_1_setting_up_the_command_line_assistant"></a>1. Setting up the Command-Line Assistant</h3>
 <div class="paragraph">
-<p>Before you begin, ensure that the command-line assistant is installed and provisioned to your RHEL deployments as described in Chapters 2 and 3.</p>
+<p>Before you begin, ensure that the command-line assistant is installed and provisioned to your RHEL deployment. Refer to Chapter 2 and Chapter 3 in the context for detailed instructions on installation and provisioning.</p>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_2_asking_questions_to_the_command_line_assistant"><a class="anchor" href="#_2_asking_questions_to_the_command_line_assistant"></a>2. Asking Questions to the Command-Line Assistant</h3>
 <div class="paragraph">
-<p>To start using the command-line assistant, simply type <code>c</code> followed by your question in quotation marks. For example:</p>
+<p>To ask a question to the command-line assistant, use the following syntax:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ c "What is the status of the sshd service?"</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">c "your-question"</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The assistant will process your request and provide a relevant response based on the information available.</p>
+<p>For example, to learn about troubleshooting network errors, you would type:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">$ c "how to troubleshoot network errors"</code></pre>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_practical_exercises"><a class="anchor" href="#_practical_exercises"></a>Practical Exercises</h3>
+<h3 id="_3_practical_exercises"><a class="anchor" href="#_3_practical_exercises"></a>3. Practical Exercises</h3>
 <div class="sect3">
-<h4 id="_exercise_1_answering_rhel_related_questions"><a class="anchor" href="#_exercise_1_answering_rhel_related_questions"></a>Exercise 1: Answering RHEL-related questions</h4>
+<h4 id="_exercise_1_troubleshooting_sshd_service_failure"><a class="anchor" href="#_exercise_1_troubleshooting_sshd_service_failure"></a>Exercise 1: Troubleshooting SSHD Service Failure</h4>
 <div class="paragraph">
-<p>Ask the assistant various questions to get comfortable with its capabilities. Here are some examples:</p>
+<p>The SSHD service is crucial for remote access to your RHEL system. If it fails to start, it can disrupt your remote management capabilities. Use the command-line assistant to troubleshoot this issue.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><code>c "What is the default shell for the root user in RHEL?"</code></p>
-</li>
-<li>
-<p><code>c "How do I check the version of my RHEL installation?"</code></p>
-</li>
-<li>
-<p><code>c "What is the purpose of the yum command in RHEL?"</code></p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_exercise_2_troubleshooting_issues"><a class="anchor" href="#_exercise_2_troubleshooting_issues"></a>Exercise 2: Troubleshooting issues</h4>
-<div class="paragraph">
-<p>Use the command-line assistant to troubleshoot common RHEL issues. Refer to Chapter 5 for examples and syntax.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p><strong>Troubleshooting SSHD service failing to start</strong></p>
-<div class="literalblock">
-<div class="content">
-<pre>Use the `-w 1` option to include the output from the last command that was run. For example:</pre>
-</div>
-</div>
+<p>Type the following command to initiate the troubleshooting process:</p>
 <div class="literalblock">
 <div class="content">
 <pre>```
-$ c -w 1 "help me understand the error when failing to start sshd service"
+$ c -w 1 "what_is_this"
 ```</pre>
 </div>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>Then, run the suggested `journalctl -xeu sshd.service` command and pipe the output to the assistant for further analysis.</pre>
+<pre>The `-w 1` option includes the output from the last command that was run, which can be helpful in diagnosing the problem.</pre>
 </div>
 </div>
 </li>
 <li>
-<p><strong>Troubleshooting SELinux issues</strong></p>
-<div class="literalblock">
-<div class="content">
-<pre>Ask the assistant for guidance on resolving SELinux-related problems. For example:</pre>
-</div>
-</div>
+<p>Based on the response, run the <code>journalctl -xeu sshd</code> command to check the log files for the SSHD service.</p>
+</li>
+<li>
+<p>Pipe the output into the command-line assistant and add a query to understand the error. For instance:</p>
 <div class="literalblock">
 <div class="content">
 <pre>```
-$ c "I am experiencing issues with SELinux. Can you provide a list of things to troubleshoot?"
+$ journalctl -xeu sshd | c "help me understand the output"
 ```</pre>
 </div>
 </div>
@@ -242,9 +202,26 @@ $ c "I am experiencing issues with SELinux. Can you provide a list of things to 
 </div>
 </div>
 <div class="sect3">
-<h4 id="_exercise_3_leveraging_additional_features"><a class="anchor" href="#_exercise_3_leveraging_additional_features"></a>Exercise 3: Leveraging additional features</h4>
+<h4 id="_exercise_2_identifying_modified_files_in_etc"><a class="anchor" href="#_exercise_2_identifying_modified_files_in_etc"></a>Exercise 2: Identifying Modified Files in /etc</h4>
 <div class="paragraph">
-<p>Explore other functionalities offered by the command-line assistant, such as attaching files, checking history, redirecting command output, and submitting feedback</p>
+<p>Suppose you need to identify files in the <code>/etc</code> directory that have been modified in the last hour. Use the command-line assistant to find this information.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Execute the following command to list the modified files:</p>
+<div class="literalblock">
+<div class="content">
+<pre>```
+$ find /etc -type f -mtime -1
+```</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Pipe the output into the command-line assistant and ask for</p>
+</li>
+</ol>
 </div>
 </div>
 </div>

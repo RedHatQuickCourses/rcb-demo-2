@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Section 1 :: Basics of RHEL Lightspeed</title>
+    <title>Key components of RHOCP :: Basics of RHEL Lightspeed</title>
     <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
@@ -117,7 +117,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Basics of RHEL Lightspeed</a></li>
-    <li><a href="section1.html">Section 1</a></li>
+    <li><a href="key-components-of-rhocp.html">Key components of RHOCP</a></li>
   </ul>
 </nav>
 </div>
@@ -126,22 +126,43 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Section 1</h1>
-<div class="ulist">
-<ul>
-<li>
-<p>Create multiple copies of this section as needed.</p>
-</li>
-<li>
-<p>Remove any unnecessary sections or chapter pages.</p>
-</li>
-<li>
-<p>Customize the section as appropriate.</p>
-</li>
-<li>
-<p>Ensure that each page contains a manageable amount of content.</p>
-</li>
-</ul>
+<h1 class="page">Key components of RHOCP</h1>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">## Key Components of Red Hat OpenShift (RHOCP)
+
+Red Hat OpenShift Container Platform (RHOCP) is a comprehensive enterprise Kubernetes platform. It provides a robust set of components that work together to deliver a complete solution for developing, deploying, and managing containerized applications at scale. Here, we will explore the key components of RHOCP:
+
+### 1. Master Node
+
+The **Master Node** is the control plane of the OpenShift cluster. It houses critical components responsible for managing the cluster and its applications. The main components running on the Master Node include:
+
+- **API Server**: This is the front-end for the OpenShift control plane. It exposes the OpenShift API and is responsible for REST handling, Kubernetes API validation, and authentication.
+
+- **etcd**: A distributed key-value store used for consistent, reliable storage of configuration data. It's the backbone for all cluster data in OpenShift.
+
+- **Controller Manager**: This component manages various controllers that handle the state of the cluster, ensuring it matches the desired state defined by users and administrators.
+
+- **Scheduler**: The Scheduler is responsible for placing pods (the smallest deployable units in Kubernetes) onto nodes based on resource availability and other constraints.
+
+### 2. Infrastructure Nodes
+
+**Infrastructure Nodes** are specialized nodes designed to host infrastructure components. These components provide services necessary for the cluster's operation but are not part of the application workloads. Examples of infrastructure components that might run on these nodes include:
+
+- **Registry Server**: Stores Docker images used by the cluster.
+
+- **Router**: Exposes routes to provide external access to services within the cluster.
+
+- **Metrics Server**: Collects resource usage data (CPU, memory) from nodes and pods, providing input to the horizontal pod autoscaler.
+
+### 3. Application Nodes
+
+**Application Nodes** are where the actual application containers run. They are managed by the Master Node and can be scaled up or down based on demand. Each node runs the container runtime (such as CRI-O or Docker) and the kubelet agent, which communicates with the Master Node's API server to ensure the nodes' status is up-to-date.
+
+### Understanding Pods, Deployments, and Services
+
+- **Pods**: The smallest deployable units in OpenShift. A Pod represents a single instance of a running process in your cluster.</code></pre>
+</div>
 </div>
 </article>
   </div>

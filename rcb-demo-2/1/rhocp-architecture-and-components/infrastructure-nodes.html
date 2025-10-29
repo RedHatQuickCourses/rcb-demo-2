@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Section 1 :: Basics of RHEL Lightspeed</title>
+    <title>Infrastructure Nodes :: Basics of RHEL Lightspeed</title>
     <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
@@ -117,7 +117,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Basics of RHEL Lightspeed</a></li>
-    <li><a href="section1.html">Section 1</a></li>
+    <li><a href="infrastructure-nodes.html">Infrastructure Nodes</a></li>
   </ul>
 </nav>
 </div>
@@ -126,22 +126,43 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Section 1</h1>
-<div class="ulist">
-<ul>
-<li>
-<p>Create multiple copies of this section as needed.</p>
-</li>
-<li>
-<p>Remove any unnecessary sections or chapter pages.</p>
-</li>
-<li>
-<p>Customize the section as appropriate.</p>
-</li>
-<li>
-<p>Ensure that each page contains a manageable amount of content.</p>
-</li>
-</ul>
+<h1 class="page">Infrastructure Nodes</h1>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">## Infrastructure Nodes in Red Hat OpenShift (RHOCP)
+
+Infrastructure nodes in Red Hat OpenShift (RHOCP) are a specialized type of node designed to host optional components that provide services for cluster operation and additional functionality. These nodes are not part of the default OpenShift installation but can be added to enhance the cluster's capabilities.
+
+### Overview
+
+Infrastructure nodes are typically used to run workloads that are not application-driven but are essential for the smooth functioning of the cluster. Examples include monitoring tools, logging aggregators, and registry servers. By offloading these services to dedicated nodes, you can prevent them from consuming resources needed by application nodes, ensuring optimal performance for your applications.
+
+### Key Components on Infrastructure Nodes
+
+1. **Monitoring Stack**: Components like Prometheus and the Monitoring Operator are often deployed on infrastructure nodes to collect and store cluster metrics. This data is crucial for understanding the health and performance of your OpenShift cluster.
+
+2. **Logging Stack**: Tools such as Elasticsearch, Kibana, and Fluentd are frequently installed on infrastructure nodes to aggregate and visualize logs from all pods in the cluster. This setup simplifies troubleshooting and provides insights into system behavior.
+
+3. **Registry Server**: An internal container registry, typically based on Red Hat Quay or Docker Registry, can be deployed on infrastructure nodes. This registry stores container images pulled from external registries, reducing the need to download images repeatedly and speeding up deployment times.
+
+### Configuring Infrastructure Nodes
+
+To add infrastructure nodes to your OpenShift cluster, follow these steps:
+
+1. **Label Nodes**: Identify the nodes you want to designate as infrastructure nodes and label them using `oc label`. For example:
+
+   ```bash
+   oc label node &lt;node-name&gt; node-role.kubernetes.io/infra=
+   ```
+
+2. **Taint Master Nodes**: Ensure that master nodes are tainted with the `node-role.kubernetes.io/infra:NoSchedule` taint to prevent scheduling of general workloads on these nodes.
+
+3. **Deploy Cluster Operators**: Use the OpenShift web console or `oc apply` commands to deploy the required operators and components (e.g., Prometheus, Logging, Quay) on the newly labeled nodes.
+
+### Hands-on Activity: Setting Up an Infrastructure Node
+
+**Objective**: Deploy a logging stack on an infrastructure node in your OpenShift cluster.</code></pre>
+</div>
 </div>
 </article>
   </div>
