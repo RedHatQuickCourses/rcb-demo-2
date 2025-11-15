@@ -1,0 +1,3 @@
+* xref:introducing-rhel-lightspeed-for-rhel-systems.adoc[]
+** xref:rhel-lightspeed-use-of-generative-ai-functionalities.adoc[]
+** xref:rhel-lightspeed-uses-the-watsonx-ai-api-llm-large-language-model.adoc[]

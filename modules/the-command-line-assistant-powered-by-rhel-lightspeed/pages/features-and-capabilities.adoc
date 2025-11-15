@@ -1,0 +1,101 @@
+#  Features and capabilities
+
+```asciidoc
+= Features and Capabilities of the RHEL Lightspeed Command-Line Assistant
+
+The RHEL Lightspeed command-line assistant is an optional, AI-powered tool integrated directly into the Red Hat Enterprise Linux (RHEL) command-line interface. Its primary goal is to empower users, regardless of their RHEL experience level, by simplifying complex tasks, providing instant technical insights, and facilitating efficient system management. This section details the core functionalities and capabilities that define the command-line assistant.
+
+[[section-ai-driven-knowledge-and-expertise]]
+== AI-Driven Knowledge and Expertise
+
+The intelligence of the RHEL Lightspeed command-line assistant stems from its comprehensive knowledge base, which is continuously fed and updated with authoritative Red Hat content. This ensures that the advice, solutions, and information provided are accurate, reliable, and aligned with Red Hat best practices.
+
+The assistant leverages information from:
+
+*   **Red Hat Knowledge Centered Service (KCS) articles:** These articles are a rich repository of solutions, troubleshooting steps, and how-to guides derived from real-world customer interactions and expert knowledge.
+*   **RHEL documentation:** The official and extensive documentation covering all aspects of Red Hat Enterprise Linux, from installation and configuration to advanced administration.
+*   **Other Red Hat resources:** A wide array of additional trusted sources and internal knowledge from Red Hat experts.
+
+By synthesizing information from these sources, the assistant delivers contextually relevant and precise answers to user queries, acting as a virtual expert at your fingertips.
+
+[[section-key-capabilities-of-the-assistant]]
+== Key Capabilities of the Command-Line Assistant
+
+The RHEL Lightspeed command-line assistant is designed to support a range of activities, making it an invaluable tool for configuring, managing, and troubleshooting RHEL systems.
+
+=== Answering RHEL-Related Questions
+The assistant can efficiently answer direct questions about RHEL concepts, commands, configurations, and best practices. It eliminates the need to manually search through extensive documentation or external resources, providing immediate and accurate information.
+
+.Example: Querying a basic system command
+----
+What is the command to check the kernel version on RHEL?
+----
+
+The assistant would respond with the relevant command, such as `uname -r` or `cat /etc/redhat-release`.
+
+=== Assistance Troubleshooting and Fixing Issues
+A significant capability of the assistant is its role in troubleshooting. When users encounter errors, unexpected system behavior, or configuration problems, they can describe the issue to the assistant. The assistant can then suggest diagnostic commands, interpret error messages, and recommend steps to resolve the problem. This significantly reduces the time and effort required to diagnose and fix system issues.
+
+.Example: Troubleshooting a service failure
+----
+My `firewalld` service is showing as inactive and disabled. How do I enable and start it?
+----
+
+The assistant would provide commands like `sudo systemctl enable firewalld` followed by `sudo systemctl start firewalld`, and potentially suggest checking logs (`journalctl -xeu firewalld`) if it still fails.
+
+=== Understanding Log Files
+Interpreting log files can be a daunting task due to their volume and often cryptic messages. The assistant can help clarify log entries, explain the meaning of various messages, and highlight critical information that indicates potential problems or system events. This capability is crucial for effective system monitoring and problem resolution.
+
+.Example: Interpreting a common log message
+----
+I see "SELinux is preventing..." in my audit logs. What does this message indicate and how can I resolve it?
+----
+
+The assistant would explain that SELinux denied an operation and suggest using tools like `sealert` or `audit2allow` to generate a custom SELinux policy module to permit the action, or to adjust the SELinux boolean.
+
+=== Asking for Recommendations
+Beyond reactive problem-solving, the assistant can provide proactive recommendations. Users can query for best practices, optimal configurations for specific services, or recommended tools to achieve certain administrative goals. This helps in implementing new features correctly and optimizing existing setups.
+
+.Example: Seeking a recommendation for network configuration
+----
+What is the recommended way to persist network interface configurations on RHEL 9?
+----
+
+The assistant would likely guide the user towards using `nmcli` (NetworkManager command-line interface) for managing connections, or editing configuration files in `/etc/NetworkManager/system-connections/` if `nmcli` is not desired.
+
+=== Interactive Workflows for Problem Solving
+The RHEL Lightspeed command-line assistant supports interactive workflows. This means users can engage in a conversational manner, providing additional details or asking follow-up questions as they work through a problem or a configuration task. This dynamic interaction allows for more nuanced guidance and tailored solutions, making it effective for complex scenarios like implementing new RHEL features or finding specific information.
+
+.Example: Interactive process to add a new user with specific permissions
+----
+User: How do I add a new user called 'devuser' to my RHEL system?
+Assistant: You can use the `useradd` command. Would you like to set a password immediately and add them to a specific group?
+User: Yes, set a password and add 'devuser' to the 'wheel' group.
+Assistant: Okay, you would use `sudo useradd -G wheel devuser` and then `sudo passwd devuser`.
+----
+
+[[section-important-operational-considerations]]
+== Important Operational Considerations
+
+It is critical for users to understand the operational boundaries of the RHEL Lightspeed command-line assistant:
+
+*   **No Direct System Access:** The assistant *does not possess direct access to the information or state of the system it is running on*. This design choice prioritizes security and privacy, ensuring that no local system data is automatically exposed to the AI model.
+*   **User-Provided Context is Key:** For the assistant to provide highly relevant and context-specific answers, *users must explicitly include details about their environment or the specific problem in their input messages*. For example, instead of asking "Why is my Apache not working?", a more effective query would be "My Apache service failed to start, and the error in `/var/log/httpd/error_log` is 'Permission denied: /var/www/html/.htaccess pcfg_openfile: unable to check htaccess file...'. What should I do?"
+*   **Guidance for Information Retrieval:** If you ask the assistant about real-time system metrics (e.g., "How much free memory is there?"), it will *not* provide the current value directly. Instead, it will provide you with the correct RHEL command (e.g., `free -h`) that you can run on your system to obtain that information yourself.
+
+[[section-rhel-lifecycle-and-support]]
+== RHEL Lifecycle and Support
+
+The RHEL Lightspeed command-line assistant adheres to the Red Hat Enterprise Linux lifecycle policy. This means its availability, support, and associated policies are aligned with the supported versions of RHEL. For detailed information regarding supported versions and lifecycle policies, users should consult the official link:https://access.redhat.com/support/policy/updates/rhel_lifecycle[Red Hat Enterprise Linux Life Cycle] documentation.
+
+FIXME: Add an illustrative diagram showing the high-level workflow of the command-line assistant:
+1. User types query in CLI.
+2. Query is securely sent to the RHEL Lightspeed service (API).
+3. The RHEL Lightspeed service interacts with the underlying WatsonX AI API LLM.
+4. LLM processes the query using Red Hat's curated knowledge base.
+5. Response is generated and sent back to the RHEL Lightspeed service.
+6. The assistant displays the response in the user's CLI.
+This visual would significantly enhance understanding of how the tool functions behind the scenes.
+
+FIXME: Consider incorporating a short video or an animated GIF in a dedicated "Hands-on Lab" section (as part of the larger course) that visually demonstrates an interaction with the assistant for one of the core capabilities (e.g., troubleshooting a simple issue or asking for a configuration recommendation). This would provide a dynamic and engaging example of its practical use.
+```

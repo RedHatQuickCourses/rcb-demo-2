@@ -1,0 +1,62 @@
+#  Overview of the command-line assistant
+
+=== Overview of the Command-Line Assistant
+
+The command-line assistant powered by RHEL Lightspeed is an innovative feature designed to enhance the interaction of users with Red Hat Enterprise Linux (RHEL) systems through the command-line interface. It leverages generative AI capabilities to simplify complex tasks, answer RHEL-related questions, and provide assistance with troubleshooting and log analysis. This tool is built to support both novice users seeking guidance and experienced administrators looking for efficient solutions.
+
+Its core purpose is to make managing RHEL systems more accessible and efficient by providing intelligent, context-aware assistance directly within the terminal environment.
+
+==== Key Capabilities
+
+The RHEL Lightspeed command-line assistant is engineered to assist users with a wide range of tasks, including:
+
+*   **Answering RHEL-related questions:** Users can directly ask questions about RHEL concepts, commands, or functionalities and receive comprehensive explanations.
+*   **Assisting with troubleshooting:** When facing system issues, the assistant can help diagnose problems, interpret error messages, and suggest potential solutions.
+*   **Deciphering log entries:** Complex log files can be challenging to understand. The assistant can help interpret log entries, providing insights into system events and potential issues.
+*   **General task guidance:** From package management to network configuration, the assistant can guide users through various administrative tasks.
+
+WARNING: Do not rely on the results from AI tools without human review. Always check the AI and LLM-generated responses for accuracy before using the generated suggestions. Human oversight is crucial to ensure the correctness and safety of any actions taken based on AI recommendations.
+
+==== How the Command-Line Assistant Works
+
+At its core, the RHEL Lightspeed command-line assistant integrates Red Hat's expertise with advanced generative AI. It uses the `WatsonX AI API LLM (Large Language Model)` as its underlying intelligence. The process flow for how the assistant receives input and generates output is as follows:
+
+. **Input Reception:**
+**a.** The command-line assistant receives your question or query as input.
+**b.** For auditing and improvement purposes, the assistant logs and stores complete transcripts of conversations. This includes:
+**i.** Queries submitted by the user.
+**ii.** The complete message sent to the configured Large Language Model (LLM) provider, which encompasses system instructions, referenced RHEL documentation, and the user's original question.
+**iii.** The complete response received back from the LLM provider.
+
+. **Backend Processing:** The received input is then processed by the RHEL Lightspeed backend services.
+
+. **Knowledge Retrieval:** The command-line assistant intelligently searches for relevant knowledge related to your query from its extensive knowledge base, which includes official Red Hat documentation and best practices.
+
+. **AI Inference:** Your query, along with the retrieved relevant knowledge and any other necessary system instructions, is then packaged and sent to the `WatsonX AI API LLM` for AI inference. The LLM processes this information to generate a coherent and accurate response.
+
+. **Output Delivery:** Finally, you receive the generated output from the command-line assistant as a direct response in your terminal. This response can range from explanatory text to command suggestions.
+
+FIXME: Consider adding an image here: A diagram illustrating the process flow for input and output in the command-line assistant (User input -> Backend -> Knowledge Search -> LLM Inference -> User Output). This visual aid would greatly enhance understanding of the technical explanation.
+
+==== Hands-on Activity: Basic Interaction
+
+While a full lab environment setup is covered in a later section, you can experience a basic interaction with the RHEL Lightspeed command-line assistant by simply asking a question. This demonstrates how straightforward it is to invoke the assistant and receive a response.
+
+. **Objective:**
+    Learn how to ask a basic question using the command-line assistant.
+
+. **Instructions:**
+
+. **Open your terminal:** Ensure you are logged into a RHEL system where the command-line assistant is installed and configured.
+. **Ask a question:** Use the `c` command followed by your question enclosed in quotation marks. For example, to ask what RHEL is, type:
++
+[source,bash]
+----
+c "What is RHEL"
+----
+
+. **Review the output:** The assistant will process your question and return a concise explanation of Red Hat Enterprise Linux.
+
+This simple interaction showcases the power and ease of use of the RHEL Lightspeed command-line assistant. You provide a natural language query, and the assistant returns a relevant, AI-generated answer, leveraging Red Hat's knowledge and the power of the `WatsonX AI API LLM`.
+
+FIXME: Consider adding a short video demonstration here: A quick screen recording showing a user typing `c "What is RHEL"` and receiving the response. This would provide an excellent visual aid for the "Basic Interaction" activity.

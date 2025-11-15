@@ -1,0 +1,11 @@
+#   Introducing RHEL Lightspeed for RHEL Systems
+
+=== Introducing RHEL Lightspeed for RHEL Systems
+
+RHEL Lightspeed brings generative AI capabilities to RHEL systems to assist with configuration, management, and troubleshooting.
+
+*   It leverages link:https://www.ibm.com/watsonx[WatsonX AI API LLM^] (Large Language Model) as its underlying generative AI functionality.
+*   The WatsonX model is deployed as a SaaS external infrastructure.
+
+FIXME: Consider adding a diagram illustrating the integration of RHEL Lightspeed with WatsonX AI API LLM.
+FIXME: A short introductory video showcasing the concept of AI-driven assistance in RHEL could be beneficial.

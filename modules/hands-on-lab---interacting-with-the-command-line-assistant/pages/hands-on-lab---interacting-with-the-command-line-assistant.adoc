@@ -1,0 +1,19 @@
+#   Hands-on Lab - Interacting with the Command-Line Assistant
+
+=== Hands-on Lab - Interacting with the Command-Line Assistant
+
+This lab provides practical experience with the RHEL Lightspeed command-line assistant.
+
+*   Learn to set up a test environment for the assistant.
+*   Engage in practical exercises to leverage the assistant for various RHEL tasks, including:
+    ** Asking RHEL-related questions using the `c` command (e.g., `c "What is RHEL"`).
+    ** Attaching files to questions.
+    ** Reviewing interaction history.
+    ** Redirecting command output to the assistant.
+    ** Enabling the assistant to capture terminal activity.
+    ** Submitting feedback on responses.
+    ** Troubleshooting common system issues, such as SSHD service failures or SELinux problems.
+
+FIXME: Add screenshots or short video clips demonstrating the setup of the test environment.
+FIXME: Include screenshots of various command-line assistant interactions, such as asking questions, attaching files, and troubleshooting.
+FIXME: Consider a short video walkthrough for complex troubleshooting scenarios like debugging SSHD or SELinux issues.

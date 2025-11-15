@@ -1,0 +1,144 @@
+#  Setting up a test environment
+
+Here is the detailed educational content for "Setting up a test environment" in Antora AsciiDoc format, incorporating technical explanations, hands-on activities, and suggestions for improvement.
+
+```asciidoc
+= Setting Up Your RHEL Lightspeed Command-Line Assistant Test Environment
+:navtitle: Setup Test Environment
+
+[role="introduction"]
+Before you can effectively interact with the RHEL Lightspeed Command-Line Assistant (CLA) and utilize its generative AI functionalities, you need to establish a suitable test environment. This section provides a comprehensive guide to ensure your RHEL system meets all necessary prerequisites and is fully prepared for the upcoming hands-on exercises, including troubleshooting and command-line assistance.
+
+[[prerequisites]]
+== Prerequisites
+
+To successfully complete the labs involving the RHEL Lightspeed Command-Line Assistant, ensure your system adheres to the following prerequisites:
+
+*   A running instance of Red Hat Enterprise Linux (RHEL).
++
+FIXME: Specify the minimum required RHEL version (e.g., RHEL 9.3 or later) for RHEL Lightspeed functionality. This is crucial information for users preparing their environments and ensuring compatibility with the WatsonX AI API LLM.
+
+*   Administrative privileges (root access or a user with `sudo` capabilities). Many commands you'll execute with the CLA, especially those involving system configuration, service management, or troubleshooting SELinux, require elevated permissions. The CLA itself often suggests commands that require `sudo`.
+*   The RHEL Lightspeed Command-Line Assistant *must be installed and enabled* on your RHEL system. This involves connecting to the necessary backend services (powered by WatsonX AI API LLM) and configuring the local client.
+
+[[checking-your-environment]]
+== Checking Your Environment Readiness
+
+This procedure guides you through verifying that your RHEL system is appropriately prepared and configured to use the RHEL Lightspeed Command-Line Assistant.
+
+. *Step 1: Verify Administrative Access*
++
+Confirm that you have root access or a user account with `sudo` privileges. This is fundamental for executing system-level commands that the CLA might suggest.
++
+[source,bash,subs="attributes+"]
+----
+$ whoami
+root
+# OR
+$ sudo id -un
+root
+----
++
+If `whoami` does not return `root` and `sudo id -un` fails, you will need to either switch to the `root` user (`su -`) or configure `sudo` access for your current user. Refer to your RHEL system's documentation for instructions on managing users and `sudo` privileges.
+
+. *Step 2: Verify Command-Line Assistant Package Installation*
++
+FIXME: The provided context does not specify the exact package name for the RHEL Lightspeed Command-Line Assistant. For this step, we will use a placeholder package name `rhel-lightspeed-cla`. Please replace this with the actual package name once known.
++
+Check if the RHEL Lightspeed Command-Line Assistant package is installed on your system. This package provides the client-side tooling that interfaces with the generative AI backend.
++
+[source,bash,subs="attributes+"]
+----
+$ rpm -qa | grep rhel-lightspeed-cla # FIXME: Replace 'rhel-lightspeed-cla' with the actual package name (e.g., 'rhel-lightspeed-cli' or similar)
+----
++
+If no package is listed in the output, or if the `c` command (the CLA invocation) is not found in the subsequent step, it indicates that the RHEL Lightspeed Command-Line Assistant is not yet installed. For detailed installation instructions, including repository configuration and package names, refer to <<installation-cla-chapter#,Chapter 2, "Installing the Command-Line Assistant Powered by RHEL Lightspeed">>.
+
+. *Step 3: Verify `c` Command Availability*
++
+The `c` command is the primary executable for interacting with the RHEL Lightspeed Command-Line Assistant. Verify that this command is available in your system's PATH.
++
+[source,bash,subs="attributes+"]
+----
+$ type c
+c is /usr/bin/c # Expected output if installed and in PATH
+----
++
+If `type c` returns "c not found", it indicates that the CLA is either not installed, not enabled, or its executable path is not included in your shell's environment `PATH`. In such a scenario, you must revisit the installation and initial configuration steps detailed in <<installation-cla-chapter#,Chapter 2>>. A common post-installation step is to log out and back in, or to source your shell's profile, to ensure new PATH entries are recognized.
+
+[[preparing-for-troubleshooting-scenarios]]
+== Preparing for Troubleshooting Scenarios
+
+To effectively demonstrate and practice with the RHEL Lightspeed CLA's debugging and troubleshooting capabilities, we will set up a common service like `httpd`. This will provide a practical application context for the CLA, allowing us to simulate and resolve real-world issues. The context provided highlights `httpd` as a frequent target for CLA-assisted troubleshooting, such as SELinux policy issues or port conflicts.
+
+. *Step 1: Install the `httpd` package*
++
+Install the Apache HTTP Server (`httpd`) package if it's not already present on your system. This web server will serve as our primary example service for troubleshooting exercises.
++
+[source,bash,subs="attributes+"]
+----
+$ sudo dnf install -y httpd
+----
++
+This command utilizes `dnf` (the default package manager for RHEL) to install `httpd` and its dependencies. The `-y` flag automatically confirms any prompts. This package installation provides the foundation for subsequent labs that simulate various troubleshooting scenarios, including those related to SELinux contexts or network port configurations, as referenced in the provided context.
+
+. *Step 2: Verify `httpd` Package Version*
++
+After installation, confirm that `httpd` has been successfully installed and identify its exact version. This verification step ensures consistency and confirms the package's presence.
++
+[source,bash,subs="attributes+"]
+----
+$ sudo rpm -qa httpd
+httpd-2.4.62-2.fc40.x86_64 # Example output; your version may vary based on your specific RHEL release and configured repositories
+----
++
+This step uses `rpm` to query all installed packages (`-qa`) and filters for `httpd`, providing its full package string including version and architecture.
+
+. *Step 3: (Optional) Start and Enable the `httpd` Service*
++
+While not strictly necessary for *all* troubleshooting scenarios (as some exercises might intentionally involve a stopped or failed service), it's good practice to have `httpd` running and enabled for initial interaction and basic setup verification. This ensures the service is operational for general queries.
++
+[source,bash,subs="attributes+"]
+----
+$ sudo systemctl enable --now httpd
+----
++
+This `systemctl` command performs two actions: `enable` ensures the `httpd` service starts automatically upon system boot, and `--now` immediately starts the service. This prepares `httpd` to be an active target for CLA-assisted diagnostics.
+
+[[final-verification]]
+== Final Verification of the Test Environment
+
+To confirm that your test environment is fully prepared and that the RHEL Lightspeed Command-Line Assistant is active and responsive, let's execute a simple query. This step validates the entire setup, from installation to connectivity with the WatsonX AI API LLM.
+
+. *Step 1: Ask the Command-Line Assistant a Basic Question*
++
+Execute a simple, general knowledge query to the CLA.
++
+[source,bash,subs="attributes+"]
+----
+$ c "what is my RHEL version?"
+----
++
+The Command-Line Assistant will process your natural language request, interact with the backend LLM, and provide information about your RHEL system. A successful and relevant response confirms that the CLA is active, correctly configured, and capable of processing requests, indicating your environment is ready for advanced tasks.
+
+[NOTE]
+The command-line assistant takes some time to process the request, then provides several possible suggestions or direct answers. This delay is inherent to the LLM interaction process, so expect a brief pause before receiving output.
+
+== Next Steps
+
+With your RHEL Lightspeed Command-Line Assistant test environment successfully set up, you are now ready to proceed to xref:interacting-with-cla-lab.adoc#[Interacting with the Command-Line Assistant], where you will explore its features and capabilities through practical exercises leveraging its generative AI power.
+
+[FIXME: General Suggestions for Content Improvement]
+
+*   **FIXME**: To significantly enhance the ease of setup and ensure consistent learning environments for all users, consider providing a pre-configured virtual machine image (e.g., QCOW2 for KVM, OVA for VirtualBox) or a cloud-based lab environment (e.g., using Red Hat Developer Sandbox, or a custom `Vagrantfile`/`Ansible` playbook). This would drastically reduce user setup time and minimize potential environmental discrepancies.
+*   **FIXME**: Ensure the link `<<installation-cla-chapter#>>` resolves correctly to the actual Antora page for "Chapter 2. Installing the Command-Line Assistant Powered by RHEL Lightspeed". This might require using a full Antora `xref:component::module:page.adoc#anchor[]` syntax depending on the final Antora site structure.
+*   **FIXME**: Explicitly state any necessary firewall configurations. For instance, if the `httpd` service or other services used in later labs require specific ports to be openly accessible from outside the host, include commands like `sudo firewall-cmd --add-service=http --permanent` and `sudo firewall-cmd --reload`. This prevents common networking issues during labs.
+*   **FIXME**: Add a small section on how to quickly *reset* or *clean up* the test environment if a user wants to start over, particularly for the `httpd` service.
+
+[FIXME: Suggestions for Adding Images or Videos]
+
+*   **Image**: Include a high-level diagram illustrating the test environment architecture. This diagram should visually represent the RHEL host, the installed RHEL Lightspeed Command-Line Assistant client, and its connection to the remote WatsonX AI API LLM backend.
+*   **Image**: A clear screenshot demonstrating the output of the `type c` command when the CLA is correctly installed and its executable is found in the system's PATH. This provides a crucial visual confirmation for users during setup.
+*   **Image**: A screenshot of a successful initial query to the CLA (e.g., `c "what is my RHEL version?"`) and its generated response. This visually validates that the entire setup is functional and the CLA is communicating with its AI backend.
+*   **Video**: A short, concise video tutorial (2-3 minutes) demonstrating the entire environment setup process. This video could cover checking prerequisites, installing `httpd`, and performing the final CLA interaction, providing a dynamic and highly beneficial resource for visual learners and for clarifying complex terminal interactions.
+```
